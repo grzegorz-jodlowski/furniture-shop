@@ -10,7 +10,7 @@
       visibility: visible;
     }
 
-    .actions .price {
+    .actions .price > div {
       background-color: $primary;
     }
   }
@@ -85,9 +85,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .price {
-      background-color: #2a2a2a;
-    }
   }
 }
