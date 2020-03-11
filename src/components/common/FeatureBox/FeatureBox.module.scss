@@ -5,6 +5,25 @@
   text-align: center;
   margin-top: 40px;
 
+  &:hover {
+    .iconWrapper {
+      color: #ffffff;
+
+      &::after {
+        background-color: $primary;
+        border-color: $primary;
+      }
+    }
+
+    .content {
+      color: $primary;
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
@@ -58,21 +77,6 @@
     }
 
     p {
-    }
-  }
-
-  &.active {
-    .iconWrapper {
-      color: #ffffff;
-
-      &::after {
-        background-color: $primary;
-        border-color: $primary;
-      }
-    }
-
-    .content {
-      color: $primary;
     }
   }
 }
