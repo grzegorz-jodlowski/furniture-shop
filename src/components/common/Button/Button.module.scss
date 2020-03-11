@@ -39,3 +39,16 @@
     color: #ffffff;
   }
 }
+
+.price {
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 24px;
+  padding: 5px 10px;
+  font-weight: 400;
+  &:not(.noHover):hover {
+    color: #ffffff !important;
+    background-color: $primary;
+    text-decoration: none;
+  }
+}
