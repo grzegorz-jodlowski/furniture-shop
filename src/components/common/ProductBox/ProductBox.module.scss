@@ -10,7 +10,7 @@
       visibility: visible;
     }
 
-    .actions .price > div {
+    .actions .price > div:last-child {
       background-color: $primary;
     }
   }
