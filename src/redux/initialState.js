@@ -15,6 +15,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      photo:
+        'https://www.ikea.com/jp/en/images/products/malm-bed-frame-high__0637598_PE698416_S5.JPG?f=s',
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -24,6 +26,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      photo:
+        'https://www.ikea.com/jp/en/images/products/malm-bed-frame-high__0637598_PE698416_S5.JPG?f=s',
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -33,6 +37,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      photo: '../../public/images/products/beds/bed3',
     },
     {
       id: 'aenean-ru-bristique-4',
