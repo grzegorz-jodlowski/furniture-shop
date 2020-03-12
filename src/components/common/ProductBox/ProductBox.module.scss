@@ -10,7 +10,7 @@
       visibility: visible;
     }
 
-    .actions .price > div {
+    .actions .price > div:last-child {
       background-color: $primary;
     }
   }
@@ -82,6 +82,12 @@
 
   .actions {
     padding: 15px 10px 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price {
     display: flex;
     justify-content: space-between;
     align-items: center;
