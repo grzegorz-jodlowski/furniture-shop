@@ -5,6 +5,7 @@
   text-align: center;
   margin-top: 40px;
   display: block;
+  height: calc(100% - 40px);
 
   &:hover {
     text-decoration: none;
