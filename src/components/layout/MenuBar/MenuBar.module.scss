@@ -6,11 +6,24 @@
 
   :global(.container) > :global(.row) {
     height: 84px;
+    @media (max-width: 1200px) {
+      height: 140px;
+    }
+  }
+
+  .search {
+    @media (max-width: 1200px) {
+      order: 2;
+    }
   }
 
   .menu {
     display: flex;
     align-self: stretch;
+
+    @media (max-width: 1200px) {
+      order: 1;
+    }
 
     ul {
       margin: 0;
