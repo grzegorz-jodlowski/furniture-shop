@@ -11,6 +11,7 @@ const MenuBar = ({ children }) => (
       <div className='row align-items-center'>
         <div className={'col ' + styles.search}>
           <ProductSearch />
+          <div className={styles.hamburger}>&#9776;</div>
         </div>
         <div className={'col-auto ' + styles.menu}>
           <ul>
