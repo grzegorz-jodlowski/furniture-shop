@@ -31,3 +31,5 @@ dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane 
 ## Netlify
 
 [Furniture shop](https://dazzling-engelbart-461483.netlify.com/)
+
+

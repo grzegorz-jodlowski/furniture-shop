@@ -44,7 +44,7 @@
       }
 
      &:hover {
-      @extend %hoverAnimation;
+        @extend %hoverAnimation;
      }
 
       &.active {
