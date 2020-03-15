@@ -20,8 +20,20 @@ class ProductBox extends React.Component {
     promo: PropTypes.string,
     stars: PropTypes.number,
     favorite: PropTypes.bool,
+    addFavorite: PropTypes.func,
     compare: PropTypes.bool,
   };
+
+  state = {
+    favorite: false,
+  };
+
+  handleFavorite() {
+    this.setState({
+      favorite: true,
+    });
+    this.props.addFavorite(this.state);
+  }
 
   render() {
     const { name, oldPrice, price, promo, stars, favorite, compare } = this.props;
@@ -53,7 +65,11 @@ class ProductBox extends React.Component {
         <div className={styles.line}></div>
         <div className={styles.actions}>
           <div className={styles.outlines}>
-            <Button favorite={favorite} variant='outline'>
+            <Button
+              onClick={() => this.handleFavorite()}
+              favorite={favorite}
+              variant='outline'
+            >
               <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
             </Button>
             <Button compare={compare} variant='outline'>
