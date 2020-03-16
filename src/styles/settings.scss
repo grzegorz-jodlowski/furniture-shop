@@ -82,8 +82,9 @@ $base-padding: 24px;
 
 %hoverAnimation {
     transition:
-    background-color 250ms linear,
-    color 250ms linear,
-    border-color 250ms linear;
+    250ms;
+    //background-color 250ms linear,
+    //color 250ms linear,
+    //border-color 250ms linear;
     transform: translate(0, -10px);
 }
