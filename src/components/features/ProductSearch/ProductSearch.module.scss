@@ -41,10 +41,6 @@
     .list:hover {
       .activeList {
         display: block;
-        &:hover {
-          background-color: $primary;
-          color: $white;
-        }
       }
     }
 
