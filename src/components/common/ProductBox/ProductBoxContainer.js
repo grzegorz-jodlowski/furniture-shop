@@ -5,7 +5,7 @@ import ProductBox from './ProductBox';
 import { createActionAddFavorite } from '../../../redux/productsRedux';
 
 const mapDispatchToProps = dispatch => ({
-  addFavorite: favorite => dispatch(createActionAddFavorite(favorite)),
+  addFavorite: id => dispatch(createActionAddFavorite(id)),
 });
 
-export default connect(mapDispatchToProps)(ProductBox);
+export default connect(null, mapDispatchToProps)(ProductBox);

@@ -22,17 +22,12 @@ class ProductBox extends React.Component {
     favorite: PropTypes.bool,
     addFavorite: PropTypes.func,
     compare: PropTypes.bool,
+    id: PropTypes.string,
   };
 
-  state = {
-    favorite: false,
-  };
-
-  handleFavorite() {
-    this.setState({
-      favorite: true,
-    });
-    this.props.addFavorite(this.state);
+  handleFavorite(event) {
+    event.preventDefault();
+    this.props.addFavorite(this.props.id);
   }
 
   render() {
@@ -66,7 +61,7 @@ class ProductBox extends React.Component {
         <div className={styles.actions}>
           <div className={styles.outlines}>
             <Button
-              onClick={() => this.handleFavorite()}
+              onClick={this.handleFavorite.bind(this)}
               favorite={favorite}
               variant='outline'
             >
