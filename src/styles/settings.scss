@@ -77,14 +77,3 @@ $old-price-text-color: $gray;
 $form-border-color: $veryDarkGray;
 
 $base-padding: 24px;
-
-/*hover animations*/
-
-%hoverAnimation {
-    transition:
-    250ms;
-    //background-color 250ms linear,
-    //color 250ms linear,
-    //border-color 250ms linear;
-    transform: translate(0, -10px);
-}
