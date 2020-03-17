@@ -16,8 +16,6 @@ $shadow: #363636;
 $orange: #d58e32;
 $white: #ffffff;
 
-
-
 // VARIABLES WE ARE USING IN ANOTHER FILES
 $header-topbar-bg: $battleshipGray;
 $header-topbar-a: $white;
@@ -77,3 +75,9 @@ $old-price-text-color: $gray;
 $form-border-color: $veryDarkGray;
 
 $base-padding: 24px;
+
+//Media breakpoints
+
+$laptop-breakpoint: 1200px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 425px;
