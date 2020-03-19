@@ -18,7 +18,6 @@ const initialState = {
       newFurniture: true,
       favorite: true,
       compare: true,
-      averageRate: 3,
       userRate: 5,
     },
     {

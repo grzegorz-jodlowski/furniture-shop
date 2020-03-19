@@ -23,6 +23,7 @@ class ProductBox extends React.Component {
     addFavorite: PropTypes.func,
     compare: PropTypes.bool,
     id: PropTypes.string,
+    userRate: PropTypes.number,
   };
 
   handleFavorite(event) {
@@ -31,7 +32,16 @@ class ProductBox extends React.Component {
   }
 
   render() {
-    const { name, oldPrice, price, promo, stars, favorite, compare } = this.props;
+    const {
+      name,
+      oldPrice,
+      price,
+      promo,
+      stars,
+      favorite,
+      compare,
+      userRate,
+    } = this.props;
     return (
       <div className={styles.root}>
         <div className={styles.photo}>
@@ -48,7 +58,7 @@ class ProductBox extends React.Component {
           <div className={styles.stars}>
             {[1, 2, 3, 4, 5].map(i => (
               <a key={i} href='#'>
-                {i <= stars ? (
+                {i <= (userRate || stars) ? (
                   <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
                 ) : (
                   <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
