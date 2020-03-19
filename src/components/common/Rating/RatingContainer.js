@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 
 import Rating from './Rating';
 
-// import { createActionAddFavorite } from '../../../redux/productsRedux';
+import { createActionUpdateUserRate } from '../../../redux/productsRedux';
 
 const mapDispatchToProps = dispatch => ({
-  // addFavorite: id => dispatch(createActionAddFavorite(id)),
+  updateUserRate: (id, rating) => dispatch(createActionUpdateUserRate({ id, rating })),
 });
 
 export default connect(null, mapDispatchToProps)(Rating);

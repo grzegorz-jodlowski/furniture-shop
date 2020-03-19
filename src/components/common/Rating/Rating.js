@@ -7,16 +7,14 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 class Rating extends React.Component {
   static propTypes = {
+    id: PropTypes.string,
     stars: PropTypes.number,
     userRate: PropTypes.number,
+    updateUserRate: PropTypes.func,
   };
 
   rate(rating) {
-    console.log(rating);
-    // this.setState({
-    //   rating: rating,
-    //   temp_rating: rating,
-    // });
+    this.props.updateUserRate(this.props.id, rating);
   }
 
   render() {
