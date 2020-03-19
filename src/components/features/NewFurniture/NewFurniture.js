@@ -106,3 +106,4 @@ NewFurniture.defaultProps = {
 };
 
 export default NewFurniture;
+
