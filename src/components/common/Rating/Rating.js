@@ -11,14 +11,26 @@ class Rating extends React.Component {
     userRate: PropTypes.number,
   };
 
+  rate(rating) {
+    console.log(rating);
+    // this.setState({
+    //   rating: rating,
+    //   temp_rating: rating,
+    // });
+  }
+
   render() {
     const { stars, userRate } = this.props;
     return [1, 2, 3, 4, 5].map(i => (
       <a key={i} href='#'>
         {i <= (userRate || stars) ? (
-          <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+          <FontAwesomeIcon onClick={this.rate.bind(this, i)} icon={faStar}>
+            {i} stars
+          </FontAwesomeIcon>
         ) : (
-          <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+          <FontAwesomeIcon onClick={this.rate.bind(this, i)} icon={farStar}>
+            {i} stars
+          </FontAwesomeIcon>
         )}
       </a>
     ));
