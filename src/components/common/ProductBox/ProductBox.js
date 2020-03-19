@@ -10,7 +10,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
-import Rating from '../Rating/Rating';
+import Rating from '../Rating/RatingContainer';
 
 class ProductBox extends React.Component {
   static propTypes = {

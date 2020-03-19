@@ -22,7 +22,7 @@ class Rating extends React.Component {
   render() {
     const { stars, userRate } = this.props;
     return [1, 2, 3, 4, 5].map(i => (
-      <a key={i} href='#'>
+      <a key={i}>
         {i <= (userRate || stars) ? (
           <FontAwesomeIcon onClick={this.rate.bind(this, i)} icon={faStar}>
             {i} stars
