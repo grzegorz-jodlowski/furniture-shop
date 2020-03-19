@@ -33,21 +33,13 @@ const TopBar = () => (
           <ul>
             <li>
               <a href='#'>
-<<<<<<< HEAD
-                <FontAwesomeIcon className={styles.icon} icon={faUser} />{''}
-=======
                 <FontAwesomeIcon className={styles.icon} icon={faUser} />
->>>>>>> f2cda3f08d9c9bc1c5e838a8062d21103fd6b320
                 <span>Login</span>
               </a>
             </li>
             <li>
               <a href='#'>
-<<<<<<< HEAD
-                <FontAwesomeIcon className={styles.icon} icon={faLock} />{''}
-=======
                 <FontAwesomeIcon className={styles.icon} icon={faLock} />
->>>>>>> f2cda3f08d9c9bc1c5e838a8062d21103fd6b320
                 <span>Register</span>
               </a>
             </li>
