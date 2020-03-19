@@ -8,17 +8,18 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
-    setActive: true,
+    setActive: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ setActive: false });
+    this.setState({
+      activePage: newPage,
+      setActive: true,
+    });
+
     setTimeout(() => {
-      this.setState({ setActive: true });
-    }, 1000);
-    setTimeout(() => {
-      this.setState({ activePage: newPage });
-    }, 1000);
+      this.setState({ setActive: false });
+    }, 150);
   }
 
   handleCategoryChange(newCategory) {
@@ -76,9 +77,7 @@ class NewFurniture extends React.Component {
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div
                 key={item.id}
-                className={
-                  'col-3 ' + (this.state.setActive ? styles.fadeIn : styles.fadeOut)
-                }
+                className={'col-3 ' + (this.state.setActive ? 'fade' : 'fade show')}
               >
                 <ProductBox {...item} />
               </div>
