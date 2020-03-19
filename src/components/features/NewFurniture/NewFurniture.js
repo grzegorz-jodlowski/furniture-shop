@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 
 class NewFurniture extends React.Component {
   state = {
@@ -51,7 +51,7 @@ class NewFurniture extends React.Component {
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
+              <div className={'col-lg-auto col-12 ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
               <div className={'col ' + styles.menu}>
@@ -77,7 +77,10 @@ class NewFurniture extends React.Component {
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
               <div
                 key={item.id}
-                className={'col-3 ' + (this.state.setActive ? 'fade' : 'fade show')}
+                className={
+                  'col-lg-3 col-md-6 col-sm-12 ' +
+                  (this.state.setActive ? 'fade' : 'fade show')
+                }
               >
                 <ProductBox {...item} />
               </div>
