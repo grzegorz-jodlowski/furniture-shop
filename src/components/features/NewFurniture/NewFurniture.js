@@ -8,10 +8,18 @@ class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    setActive: false,
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({
+      activePage: newPage,
+      setActive: true,
+    });
+
+    setTimeout(() => {
+      this.setState({ setActive: false });
+    }, 150);
   }
 
   handleCategoryChange(newCategory) {
@@ -38,13 +46,12 @@ class NewFurniture extends React.Component {
         </li>
       );
     }
-
     return (
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
+              <div className={'col-lg-auto col-12 ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
               <div className={'col ' + styles.menu}>
@@ -68,7 +75,13 @@ class NewFurniture extends React.Component {
           </div>
           <div className='row'>
             {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
+              <div
+                key={item.id}
+                className={
+                  'col-lg-3 col-md-6 col-sm-12 ' +
+                  (this.state.setActive ? 'fade' : 'fade show')
+                }
+              >
                 <ProductBox {...item} />
               </div>
             ))}
@@ -80,6 +93,8 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
+  active: PropTypes.bool,
+  setActive: PropTypes.bool,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({

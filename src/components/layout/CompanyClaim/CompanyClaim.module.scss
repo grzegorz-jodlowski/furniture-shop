@@ -71,3 +71,35 @@
     }
   }
 }
+
+@media (max-width:768px) {
+  .root .wrapper {
+    display: block;
+    position: relative;
+  }
+
+  .logo {
+    width: auto;
+    position: absolute;
+    left: 0;
+    top: 20px;
+  }
+
+  .cart {
+    width: auto;
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+
+  .phoneNumber {
+    width: auto;
+    position: absolute;
+    right:0;
+    bottom: 20px;
+
+    p {
+      font-size: 14px;
+    }
+  }
+}
