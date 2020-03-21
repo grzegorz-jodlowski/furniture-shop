@@ -1,0 +1,18 @@
+@import "../../../styles/settings.scss";
+
+a {
+  text-decoration: none;
+  color: $productBox-stars-color;
+
+  // &:hover * {
+  //   color: $primary;
+  // }
+
+  &:hover ~ a {
+    color: $primary;
+  }
+}
+
+.userRate {
+  color: $primary;
+}

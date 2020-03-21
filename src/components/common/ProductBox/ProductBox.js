@@ -57,7 +57,7 @@ class ProductBox extends React.Component {
         </div>
         <div className={styles.content}>
           <h5>{name}</h5>
-          <div className={styles.stars}>
+          <div>
             <Rating stars={stars} userRate={userRate} id={id} />
           </div>
         </div>
