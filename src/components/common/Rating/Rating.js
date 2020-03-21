@@ -23,7 +23,11 @@ class Rating extends React.Component {
     return [1, 2, 3, 4, 5].map(i => (
       <a key={i}>
         {i <= (userRate || stars) ? (
-          <FontAwesomeIcon onClick={this.rate.bind(this, i)} icon={faStar}>
+          <FontAwesomeIcon
+            className={userRate ? styles.userRate : ''}
+            onClick={this.rate.bind(this, i)}
+            icon={faStar}
+          >
             {i} stars
           </FontAwesomeIcon>
         ) : (
