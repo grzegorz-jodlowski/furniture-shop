@@ -52,9 +52,7 @@ class Rating extends React.Component {
           </FontAwesomeIcon>
         ) : (
           <FontAwesomeIcon
-            className={`${this.state.tempRate >= i ? styles.tempRate : ''} ${
-              userRate ? styles.userRate : ''
-            }`}
+            className={`${this.state.tempRate >= i ? styles.tempRate : ''}`}
             onClick={this.rate.bind(this, i)}
             icon={farStar}
             onMouseOver={this.starOver.bind(this, i)}
