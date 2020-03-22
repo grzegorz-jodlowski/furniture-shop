@@ -15,7 +15,7 @@ $shadow: #363636;
 
 $orange: #d58e32;
 $white: #ffffff;
-
+$green: rgba(22, 187, 22, 0.808);
 
 
 // VARIABLES WE ARE USING IN ANOTHER FILES
@@ -102,9 +102,9 @@ $gallery-btn-hover-bkg: $orange;
 $gallery-btn-hover-font: $white;
 $gallery-content-bg: $white;
 $gallery-triangle: $veryDarkGray;
-//$gallery-price-bg: $gray;
-//$gallery-price: $lightGray;
-//$gallery-picture: $primary;
+$gallery-price-bg: $veryDarkGray;
+$gallery-price: $lightGray;
+$gallery-picture: $green;
 
 
 /*OTHER*/

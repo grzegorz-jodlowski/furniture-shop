@@ -17,7 +17,7 @@ const Gallery = ({products}) => {
     <div className={styles.root}>
       <div className='container'>
         <div  className='row'>
-          <dic className='col-6'>
+          <dic className='col-6 '>
             <div className={styles.heading}>
               <h3>Furniture gallery</h3>
             </div>
@@ -63,16 +63,25 @@ const Gallery = ({products}) => {
                     <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
                     <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
                     <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-
                   </span>
                 </div>
                 <div className={styles.triangleBottomRight} />
+                <div className={styles.price}>
+                  <h3>$ {products[0].price}</h3>
+                  <h3>$ {products[0].oldPrice}</h3>
+                </div>
               </div>
             </div>
             <div className={styles.slider}>slider</div>
           </dic>
-          <div className='col-6'>picture</div>
+          <div className={'col-6 ' + styles.picture}>
+            <img src={products[2].photo} alt='product'/>
+            <div className={styles.details}>
+              <h3>from <span>$ {products[2].price}</span></h3>
+              <h1>{products[2].name}</h1>
+              <Button variant='greenBtn'>Shop now</Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -86,6 +95,7 @@ Gallery.propTypes = {
       name: PropTypes.string,
       category: PropTypes.string,
       price: PropTypes.number,
+      oldPrice: PropTypes.number,
       stars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,

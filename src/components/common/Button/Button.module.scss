@@ -74,4 +74,16 @@
     @extend %hoverAnimation;
     cursor: pointer;
   }
-};
+}
+
+.greenBtn {
+  background-color: $gallery-picture;
+  color: $button-main-color;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: lighten($gallery-picture, 20%);
+    text-decoration: none;
+    color: $text-color;
+  }
+}
