@@ -40,3 +40,52 @@
     }
   }
 }
+
+@media (max-width:768px) {
+  .root .topMenu {
+    ul li {
+      margin-left: 1rem;
+    }
+    span {
+      display: none;
+    }
+  }
+
+  .root .topOptions ul li {
+    margin-right: 1rem;
+    a {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width:375px) {
+  ul li {
+    margin-left: 0.2rem;
+  }
+
+  .root .topOptions ul li {
+    margin-right: 0.5rem;
+    a {
+      font-size: 10px;
+    }
+  }
+}
+
+@media (max-width:361px) {
+  .root .topMenu {
+    ul li {
+      margin-left: 0.5rem;
+    }
+    span {
+      display: none;
+    }
+  }
+
+  .root .topOptions ul li {
+    margin-right: 1rem;
+    a {
+      font-size: 14px;
+    }
+  }
+}
