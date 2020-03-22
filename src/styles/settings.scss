@@ -19,22 +19,33 @@ $white: #ffffff;
 
 
 // VARIABLES WE ARE USING IN ANOTHER FILES
+
+/*HEADER*/
+
 $header-topbar-bg: $battleshipGray;
 $header-topbar-a: $white;
 $header-bg: $shadow;
+
+/*NEW FURNITURE*/
 
 $newFurniture-panelBar-border: $mediumLightGray;
 $newFurniture-menu-a: $darkGray;
 $newFurniture-dots-bgc: $white;
 $newFurniture-dots-a: $veryLightGray;
 
+/*COMPANY CLAIM*/
+
 $companyClaim-phoneNumber-p: $lightGray;
 $companyClaim-cardCounter-color: $lightGrayishBlue;
 $companyClaim-cardBox-color: $white;
 
+/*MENU BAR*/
+
 $menuBar-active-color: $white;
 $menuBar-a-border: $white;
 $menuBar-root-bgc: $white;
+
+/*FOOTER*/
 
 $footer-claim-bg: $darkGray;
 $footer-bg: $shadow;
@@ -44,6 +55,8 @@ $footer-menu-hover: $white;
 $footer-copyright-p: $mediumGray;
 $footer-socialMedia-a: $mediumGray;
 
+/*PRODUCT BOX*/
+
 $productBox-root-bgc: $white;
 $productBox-root-border: $veryLightGray;
 $productBox-photo-color: $mediumLightGrayishBlue;
@@ -52,11 +65,15 @@ $productBox-sale-color: $white;
 $productBox-stars-color: $darkGray;
 $productBox-line-border: $darkGray;
 
+/*FEATURE BOX*/
+
 $featureBox-root-border: $mediumDarkGray;
 $featureBox-root-icon-color: $white;
 $featureBox-icon-border: $mediumDarkGray;
 $featureBox-icon-bgc: $white;
 $featureBox-content-color: $darkGray;
+
+/*BUTTON*/
 
 $button-main-bgc: $darkGray;
 $button-main-color: $white;
@@ -68,6 +85,26 @@ $button-outline-not-bgc: $darkGray;
 $button-outline-not-color: $white;
 $button-favorite-color: $white;
 $button-compare-color: $white;
+
+/*GALLERY*/
+
+$gallery-heading-border: $mediumLightGray;
+$gallery-heading: $orange;
+$gallery-heading-before: $orange;
+$gallery-link: $darkGray;
+$gallery-link-active: $orange;
+$gallery-link-active-border: $orange;
+$gallery-link-active-bg: $mediumLightGrayishBlue;
+$gallery-link-bg: $white;
+$gallery-link-border: $lightGray;
+//$gallery-content-bg: $white;
+//$gallery-triangle: $veryDarkGray;
+//$gallery-price-bg: $gray;
+//$gallery-price: $lightGray;
+//$gallery-picture: $primary;
+
+
+/*OTHER*/
 
 $primary: $orange;
 

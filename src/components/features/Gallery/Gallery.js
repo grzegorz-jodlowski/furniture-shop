@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Gallery.module.scss';
+//import PropTypes from 'prop-types';
 
 const Gallery = () => {
   return (
@@ -11,10 +12,9 @@ const Gallery = () => {
               <h3>Furniture gallery</h3>
             </div>
             <div className={styles.menu}>
-              <span>category</span>
               <ul>
                 <li>
-                  <span>Featured</span>
+                  <span className={styles.active}>Featured</span>
                 </li>
                 <li>
                   <span>Top seller</span>
@@ -27,7 +27,9 @@ const Gallery = () => {
                 </li>
               </ul>
             </div>
-            <div className={styles.product}>product</div>
+            <div className={styles.product}>
+              <img src={''} alt='product-1' />
+            </div>
             <div className={styles.slider}>slider</div>
           </dic>
           <div className='col-6'>picture</div>
@@ -36,5 +38,6 @@ const Gallery = () => {
     </div>
   );
 };
+
 
 export default Gallery;
