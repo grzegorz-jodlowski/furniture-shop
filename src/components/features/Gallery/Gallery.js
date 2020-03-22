@@ -3,6 +3,7 @@ import styles from './Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import {
+  faStar,
   faHeart,
   faExchangeAlt,
   faShoppingBasket,
@@ -40,17 +41,33 @@ const Gallery = ({products}) => {
               <img src={products[0].photo} alt='product-1' />
               <div className={styles.buttons}>
                 <Button variant='galleryBtn'>
-                  <FontAwesomeIcon icon={faHeart}>Add to compare</FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faHeart}>Favourite</FontAwesomeIcon>
                 </Button>
                 <Button variant='galleryBtn'>
                   <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
                 </Button>
                 <Button variant='galleryBtn'>
-                  <FontAwesomeIcon icon={faEye}>Add to compare</FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
                 </Button>
                 <Button variant='galleryBtn'>
-                  <FontAwesomeIcon icon={faShoppingBasket}>Add to compare</FontAwesomeIcon>
+                  <FontAwesomeIcon icon={faShoppingBasket}>Add to basket</FontAwesomeIcon>
                 </Button>
+              </div>
+              <div className={styles.content}>
+                <div className={styles.triangleTopLeft} />
+                <h5>{products[0].name}</h5>
+                <div className={styles.stars}>
+                  <span>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
+
+                  </span>
+                </div>
+                <div className={styles.triangleBottomRight} />
               </div>
             </div>
             <div className={styles.slider}>slider</div>
