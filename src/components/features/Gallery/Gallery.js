@@ -1,7 +1,15 @@
 import React from 'react';
 import styles from './Gallery.module.scss';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+import {
+  //faStar,
+  faExchangeAlt,
+  faShoppingBasket,
+  faEye,
+} from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import Button from '../../common/Button/Button';
 
 
 const Gallery = ({products}) => {
@@ -31,6 +39,17 @@ const Gallery = ({products}) => {
             </div>
             <div className={styles.product}>
               <img src={products[0].photo} alt='product-1' />
+              <div className={styles.buttons}>
+                <Button variant='galleryBtn'>
+                  <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+                </Button>
+                <Button variant='galleryBtn'>
+                  <FontAwesomeIcon icon={faEye}>Add to compare</FontAwesomeIcon>
+                </Button>
+                <Button variant='galleryBtn'>
+                  <FontAwesomeIcon icon={faShoppingBasket}>Add to compare</FontAwesomeIcon>
+                </Button>
+              </div>
             </div>
             <div className={styles.slider}>slider</div>
           </dic>
