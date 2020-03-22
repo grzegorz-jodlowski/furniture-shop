@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './Gallery.module.scss';
-//import PropTypes from 'prop-types';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
-const Gallery = () => {
+
+const Gallery = ({products}) => {
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -28,7 +30,7 @@ const Gallery = () => {
               </ul>
             </div>
             <div className={styles.product}>
-              <img src={''} alt='product-1' />
+              <img src={products[0].photo} alt='product-1' />
             </div>
             <div className={styles.slider}>slider</div>
           </dic>
@@ -37,6 +39,22 @@ const Gallery = () => {
       </div>
     </div>
   );
+};
+
+Gallery.propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      category: PropTypes.string,
+      price: PropTypes.number,
+      stars: PropTypes.number,
+      promo: PropTypes.string,
+      newFurniture: PropTypes.bool,
+      favorite: PropTypes.bool,
+      photo: PropTypes.string,
+    })
+  ),
 };
 
 
