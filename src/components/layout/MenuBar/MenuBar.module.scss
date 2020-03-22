@@ -29,7 +29,7 @@
     }
   }
 
-  .hamburger {
+  .hamburgerIcon {
     display: none;
     @media (max-width: $mobile-breakpoint) {
       display: inline-block;
@@ -46,6 +46,7 @@
       &:hover {
         background-color: $primary;
         color: $text-color;
+        transition: background-color $background-color-transition linear;
       }
     }
   }
@@ -101,5 +102,9 @@
         border-color: $text-color;
       }
     }
+  }
+
+  .activeHamburgerMenu {
+    display: flex;
   }
 }

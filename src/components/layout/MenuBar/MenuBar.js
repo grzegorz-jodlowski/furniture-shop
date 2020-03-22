@@ -6,8 +6,14 @@ import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
 
 class MenuBar extends React.Component {
+  state = {
+    activeHamburger: null,
+  };
+
   handleHamburgerClick() {
-    console.log('joł');
+    this.setState({
+      activeHamburger: !this.state.activeHamburger,
+    });
   }
 
   render() {
@@ -20,13 +26,16 @@ class MenuBar extends React.Component {
             <div className={'col ' + styles.search}>
               <ProductSearch />
               <div
-                className={styles.hamburger}
+                className={styles.hamburgerIcon}
                 onClick={this.handleHamburgerClick.bind(this)}
               >
                 &#9776;
               </div>
             </div>
-            <div className={'col-auto ' + styles.menu}>
+            <div
+              className={`col-auto ${styles.menu} ${this.state.activeHamburger &&
+                styles.activeHamburgerMenu}`}
+            >
               <ul>
                 <li>
                   <a href='#' className={styles.active}>
