@@ -3,12 +3,11 @@ import styles from './Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import {
-  //faStar,
+  faHeart,
   faExchangeAlt,
   faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 
 
@@ -40,6 +39,9 @@ const Gallery = ({products}) => {
             <div className={styles.product}>
               <img src={products[0].photo} alt='product-1' />
               <div className={styles.buttons}>
+                <Button variant='galleryBtn'>
+                  <FontAwesomeIcon icon={faHeart}>Add to compare</FontAwesomeIcon>
+                </Button>
                 <Button variant='galleryBtn'>
                   <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
                 </Button>
