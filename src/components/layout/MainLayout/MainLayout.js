@@ -11,7 +11,7 @@ class MainLayout extends React.Component {
   }
 
   resize() {
-    console.log('joł');
+    console.log(window.innerWidth);
   }
 
   render() {
