@@ -2,6 +2,10 @@ import React from 'react';
 import styles from './Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+
+import 'rc-tooltip/assets/bootstrap_white.css';
+import Tooltip from 'rc-tooltip';
+
 import {
   faStar,
   faHeart,
@@ -40,18 +44,42 @@ const Gallery = ({products}) => {
             <div className={styles.product}>
               <img src={products[0].photo} alt='product-1' />
               <div className={styles.buttons}>
-                <Button variant='galleryBtn'>
-                  <FontAwesomeIcon icon={faHeart}>Favourite</FontAwesomeIcon>
-                </Button>
-                <Button variant='galleryBtn'>
-                  <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-                </Button>
-                <Button variant='galleryBtn'>
-                  <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
-                </Button>
-                <Button variant='galleryBtn'>
-                  <FontAwesomeIcon icon={faShoppingBasket}>Add to basket</FontAwesomeIcon>
-                </Button>
+                <Tooltip
+                  placement='right'
+                  overlay='Add to favorite'
+                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
+                >
+                  <Button variant='galleryBtn'>
+                    <FontAwesomeIcon icon={faHeart}>{'Add to compare'}</FontAwesomeIcon>
+                  </Button>
+                </Tooltip>
+                <Tooltip
+                  placement='right'
+                  overlay='Add to compare'
+                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
+                >
+                  <Button variant='galleryBtn'>
+                    <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+                  </Button>
+                </Tooltip>
+                <Tooltip
+                  placement='right'
+                  overlay='View details'
+                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
+                >
+                  <Button variant='galleryBtn'>
+                    <FontAwesomeIcon icon={faEye}>View details</FontAwesomeIcon>
+                  </Button>
+                </Tooltip>
+                <Tooltip
+                  placement='right'
+                  overlay='Add to basket'
+                  arrowContent={<div className='rc-tooltip-arrow-inner' />}
+                >
+                  <Button variant='galleryBtn'>
+                    <FontAwesomeIcon icon={faShoppingBasket}>Add to basket</FontAwesomeIcon>
+                  </Button>
+                </Tooltip>
               </div>
               <div className={styles.content}>
                 <div className={styles.triangleTopLeft} />
@@ -68,21 +96,29 @@ const Gallery = ({products}) => {
                 <div className={styles.triangleBottomRight} />
                 <div className={styles.price}>
                   <h3>$ {products[0].price}</h3>
-                  <h3>$ {products[0].oldPrice}</h3>
+                  <h3> <s>$ {products[0].oldPrice}</s></h3>
                 </div>
               </div>
             </div>
             <div className={styles.slider}>
-              <div className={styles.preview}>{'<'}</div>
+              <Button className={styles.preview}>
+                <p>{'<'}</p>
+              </Button>
               <div className={styles.slides}>
-                <img src={products[0].photo} alt='photo' className={styles.slidePhoto + ' ' + styles.active} />
+                <img
+                  src={products[0].photo}
+                  alt='pic'
+                  className={styles.slidePhoto + ' ' + styles.active}
+                />
                 <img src={products[1].photo} alt='photo' className={styles.slidePhoto} />
                 <img src={products[2].photo} alt='photo' className={styles.slidePhoto} />
                 <img src={products[3].photo} alt='photo' className={styles.slidePhoto} />
                 <img src={products[4].photo} alt='photo' className={styles.slidePhoto} />
                 <img src={products[5].photo} alt='photo' className={styles.slidePhoto} />
               </div>
-              <div className={styles.next}>{'>'}</div>
+              <Button className={styles.next}>
+                <p>{'>'}</p>
+              </Button>
             </div>
           </dic>
           <div className={'col-6 ' + styles.picture}>
