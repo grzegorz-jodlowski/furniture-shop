@@ -5,7 +5,7 @@ import MainLayout from './MainLayout';
 //import {  } from '../../../redux/';
 
 const mapDispatchToProps = dispatch => ({
-  //addFavorite: id => dispatch(createActionAddFavorite(id)),
+  //updateDeviceMode: deviceMode => dispatch(createActionUpdateDeviceMode(deviceMode)),
 });
 
 export default connect(null, mapDispatchToProps)(MainLayout);
