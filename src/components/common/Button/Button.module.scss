@@ -4,17 +4,18 @@
 // }
 
 .main {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $button-main-bgc;
+  color: $button-main-color;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
 
   &:not(.noHover):hover {
-    color: #ffffff !important;
+    color: $button-main-not-color !important;
     background-color: $primary;
     text-decoration: none;
+    @extend %hoverAnimation;
   }
 }
 
@@ -29,13 +30,31 @@
 .outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  border: 1px solid $button-outline-border;
+  color: $button-outline-color;
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: #2a2a2a;
-    color: #ffffff;
+    background-color: $button-outline-border;
+    color: $button-outline-not-color;
+    @extend %hoverAnimation;
   }
+}
+
+.oldPrice {
+  @extend .small;
+  background-color: transparent;
+  text-decoration: line-through;
+  color: $old-price-text-color;
+}
+
+.favorite {
+  background-color: $primary;
+  color: $button-favorite-color;
+}
+
+.compare {
+  background-color: $primary;
+  color: $button-compare-color;
 }

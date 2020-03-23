@@ -12,7 +12,7 @@
       margin: 0;
       font-size: 17px;
       line-height: 42px;
-      color: rgb(216, 216, 216);
+      color: $companyClaim-phoneNumber-p;
       font-weight: 500;
 
       .icon {
@@ -29,7 +29,7 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: #ffffff;
+      color: $companyClaim-cardBox-color;
 
       .cartIcon {
         background-color: $primary;
@@ -55,7 +55,7 @@
         align-items: center;
         justify-content: center;
         font-size: 14px;
-        color: rgb(224, 227, 237);
+        color: $companyClaim-cardCounter-color;
         position: absolute;
         top: 50%;
         right: 0;
@@ -65,8 +65,41 @@
       &:hover {
         .cartIcon {
           background-color: lighten($primary, 10%);
+          @extend %hoverAnimation;
         }
       }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .root .wrapper {
+    display: block;
+    position: relative;
+  }
+
+  .logo {
+    width: auto;
+    position: absolute;
+    left: 0;
+    top: 20px;
+  }
+
+  .cart {
+    width: auto;
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+
+  .phoneNumber {
+    width: auto;
+    position: absolute;
+    right:0;
+    bottom: 20px;
+
+    p {
+      font-size: 14px;
     }
   }
 }
