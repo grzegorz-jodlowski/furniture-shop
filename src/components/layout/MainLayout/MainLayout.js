@@ -12,9 +12,9 @@ class MainLayout extends React.Component {
 
   resize() {
     let displayMode;
-    if (window.innerWidth <= 425) {
+    if (window.innerWidth < 768) {
       displayMode = 'phone';
-    } else if (window.innerWidth > 425 && window.innerWidth < 1024) {
+    } else if (window.innerWidth >= 768 && window.innerWidth < 992) {
       displayMode = 'tablet';
     } else {
       displayMode = 'laptop';
