@@ -24,6 +24,7 @@
     }
 
     @media (max-width: $mobile-breakpoint) {
+      position: absolute;
       display: flex;
       justify-content: space-between;
     }
@@ -106,5 +107,21 @@
 
   .activeHamburgerMenu {
     display: flex;
+    order: 3;
+    position: relative;
+    top: 84px;
+    width: 100%;
+    z-index: 100;
+    background-color: $background-color;
+
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      & li a {
+        width: 100%;
+      }
+    }
   }
 }
