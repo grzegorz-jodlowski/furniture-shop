@@ -51,6 +51,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      offer: true,
     },
     {
       id: 'aenean-ru-bristique-5',

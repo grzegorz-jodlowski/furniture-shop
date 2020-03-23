@@ -58,3 +58,20 @@
   background-color: $primary;
   color: $button-compare-color;
 }
+
+.nextBackBtn {
+  width: 50%;
+  height: 9%;
+  text-align: center;
+  line-height: 44px;
+  font-size: 14px;
+  font-weight: bold;
+  color: $button-next-back-color;
+  background-color: $button-next-back-bgc;
+  transition: .2s linear;
+
+  &:hover {
+    color: $button-next-back-color;
+    background-color: $button-next-back-hover;
+  }
+}

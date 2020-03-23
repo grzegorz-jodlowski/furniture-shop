@@ -5,6 +5,8 @@ export const getCount = ({ products }) => products.length;
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
+export const getOffer = ({ products }) => products.filter(item => item.offer === true);
+
 // action name creator
 const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
