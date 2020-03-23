@@ -49,19 +49,23 @@
       .cartCounter {
         width: 80px;
         height: 27px;
-        padding: 0 10px;
         border-radius: 14px;
-        border: $primary solid 2px;
         background-color: $header-bg;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 14px;
-        color: rgb(224, 227, 237);
+        color: $companyClaim-cardCounter-color;
         position: absolute;
         top: 50%;
         left: 0;
         transform: translate(50%, -50%);
+        text-align: left;
+          
+        span {
+          position: absolute;
+          left: 10px;
+        }
       }
 
       &:hover {
