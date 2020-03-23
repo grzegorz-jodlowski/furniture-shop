@@ -11,7 +11,15 @@ class MainLayout extends React.Component {
   }
 
   resize() {
-    console.log(window.innerWidth);
+    let displayMode;
+    if (window.innerWidth <= 425) {
+      displayMode = 'phone';
+    } else if (window.innerWidth > 425 && window.innerWidth < 1024) {
+      displayMode = 'tablet';
+    } else {
+      displayMode = 'laptop';
+    }
+    this.props.updateDeviceMode(displayMode);
   }
 
   render() {
@@ -27,6 +35,7 @@ class MainLayout extends React.Component {
 
 MainLayout.propTypes = {
   children: PropTypes.node,
+  updateDeviceMode: PropTypes.func,
 };
 
 export default MainLayout;
