@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Gallery from '../../features/Gallery/GalleryContainer';
 
 const MainLayout = ({ children }) => (
   <div>
     <Header />
     {children}
-    <Gallery />
     <Footer />
   </div>
 );
