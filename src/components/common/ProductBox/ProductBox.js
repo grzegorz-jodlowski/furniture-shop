@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -25,6 +26,7 @@ class ProductBox extends React.Component {
     compare: PropTypes.bool,
     id: PropTypes.string,
     userRate: PropTypes.number,
+    photo: PropTypes.string,
   };
 
   handleFavorite(event) {
@@ -43,10 +45,12 @@ class ProductBox extends React.Component {
       favorite,
       compare,
       userRate,
+      photo,
     } = this.props;
     return (
       <div className={styles.root}>
         <div className={styles.photo}>
+          <img src={photo} alt='bed' />
           {promo && <div className={styles.sale}>{promo}</div>}
           <div className={styles.buttons}>
             <Button variant='small'>Quick View</Button>
