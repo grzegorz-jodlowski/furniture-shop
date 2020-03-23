@@ -36,7 +36,10 @@ class Rating extends React.Component {
 
   render() {
     const { stars, userRate } = this.props;
-    return [1, 2, 3, 4, 5].map(i => (
+
+    const starsArray = new Array(5).fill(0).map((el, i) => ++i);
+
+    return starsArray.map(i => (
       <a key={i}>
         {i <= (userRate || stars) ? (
           <FontAwesomeIcon
