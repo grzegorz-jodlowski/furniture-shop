@@ -16,7 +16,6 @@ import {
 
 import Button from '../../common/Button/Button';
 import initialState from '../../../redux/initialState';
-import ProductBox from '../../common/ProductBox/ProductBox';
 
 
 const Gallery = ({products}) => {
