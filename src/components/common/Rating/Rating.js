@@ -41,29 +41,19 @@ class Rating extends React.Component {
 
     return starsArray.map(i => (
       <button key={i}>
-        {i <= (userRate || stars) ? (
+        {
           <FontAwesomeIcon
             className={`${this.state.tempRate >= i ? styles.tempRate : ''} ${
-              userRate ? styles.userRate : ''
+              userRate && i <= (userRate || stars) ? styles.userRate : ''
             }`}
             onClick={this.rate.bind(this, i)}
-            icon={faStar}
+            icon={i <= (userRate || stars) ? faStar : farStar}
             onMouseOver={this.starOver.bind(this, i)}
             onMouseOut={this.starOut.bind(this)}
           >
             {i} stars
           </FontAwesomeIcon>
-        ) : (
-          <FontAwesomeIcon
-            className={`${this.state.tempRate >= i ? styles.tempRate : ''}`}
-            onClick={this.rate.bind(this, i)}
-            icon={farStar}
-            onMouseOver={this.starOver.bind(this, i)}
-            onMouseOut={this.starOut.bind(this)}
-          >
-            {i} stars
-          </FontAwesomeIcon>
-        )}
+        }
       </button>
     ));
   }
