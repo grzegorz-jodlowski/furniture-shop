@@ -19,6 +19,7 @@ const initialState = {
       photo: '/images/products/beds/bed1.jpeg',
       favorite: true,
       compare: true,
+      userRate: 4,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -44,6 +45,7 @@ const initialState = {
       photo: '/images/products/beds/bed3.jpeg',
       favorite: false,
       compare: true,
+      userRate: 3,
     },
     {
       id: 'aenean-ru-bristique-4',
