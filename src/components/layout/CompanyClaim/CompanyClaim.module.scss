@@ -47,7 +47,7 @@
       }
 
       .cartCounter {
-        width: 28px;
+        width: 80px;
         height: 27px;
         border-radius: 14px;
         background-color: $header-bg;
@@ -58,15 +58,53 @@
         color: $companyClaim-cardCounter-color;
         position: absolute;
         top: 50%;
-        right: 0;
+        left: 0;
         transform: translate(50%, -50%);
+          
+        span {
+          position: absolute;
+          left: 10px;
+        }
       }
 
       &:hover {
         .cartIcon {
           background-color: lighten($primary, 10%);
+          @extend %hoverAnimation;
         }
       }
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .root .wrapper {
+    display: block;
+    position: relative;
+  }
+
+  .logo {
+    width: auto;
+    position: absolute;
+    left: 0;
+    top: 20px;
+  }
+
+  .cart {
+    width: auto;
+    position: absolute;
+    right: 0;
+    top: 20px;
+  }
+
+  .phoneNumber {
+    width: auto;
+    position: absolute;
+    right:0;
+    bottom: 20px;
+
+    p {
+      font-size: 14px;
     }
   }
 }

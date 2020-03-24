@@ -1,0 +1,17 @@
+@import "../../../styles/settings.scss";
+
+button {
+  text-decoration: none;
+  color: $productBox-stars-color;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
+.userRate,
+.tempRate {
+  color: $primary;
+}
