@@ -16,6 +16,7 @@ import {
 
 import Button from '../../common/Button/Button';
 import initialState from '../../../redux/initialState';
+import ProductBox from '../../common/ProductBox/ProductBox';
 
 
 const Gallery = ({products}) => {
@@ -107,12 +108,12 @@ const Gallery = ({products}) => {
                 <p>{'<'}</p>
               </Button>
               <div className={styles.thumbnails}>
-                {initialState.products.slice(0, 6).map(product => (
-
-                  <div key={product.id} className={styles.thumbnail + ' ' + styles.active}>
+                {initialState.products.slice(0, 6).map( (product, index) => (
+                  <div key={product.id}>
                     <img
                       src={product.photo}
                       alt=''
+                      className = {(index === 0) ? styles.thumbnail + ' ' + styles.active : styles.thumbnail}
                     />
                   </div>
                 ))}

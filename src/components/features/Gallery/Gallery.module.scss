@@ -176,7 +176,6 @@
             top: 55px;
             left: 80px;
 
-
             h3 {
                 text-transform: uppercase;
 
@@ -224,8 +223,6 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-
         }
 
         .thumbnail {
@@ -234,12 +231,12 @@
             object-fit: cover;
             margin: 2px;
             position: relative;
-            opacity: 0.5;
+            overflow: hidden;
+            opacity : 0.5;
 
-            & .active {
+            &.active {
                 opacity: 1;
             }
-
 
             img {
                 width: 100%;
