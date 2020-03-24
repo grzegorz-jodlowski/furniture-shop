@@ -1,0 +1,25 @@
+@import "../../../styles/settings.scss";
+
+.root {
+height: 400px;
+
+    .wrapper{
+    min-height: 100%;
+
+        .sofa{
+            border: 1px solid black;
+            min-height: 100%;
+        }
+
+        .chair{
+            border: 1px solid black;
+            min-height: 100%;
+        }
+
+        .bed{
+            border: 1px solid black;
+            min-height: 100%;
+
+        }
+    }
+}
