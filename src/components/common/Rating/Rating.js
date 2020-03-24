@@ -40,7 +40,7 @@ class Rating extends React.Component {
     const starsArray = new Array(5).fill(0).map((el, i) => ++i);
 
     return starsArray.map(i => (
-      <a key={i}>
+      <button key={i}>
         {i <= (userRate || stars) ? (
           <FontAwesomeIcon
             className={`${this.state.tempRate >= i ? styles.tempRate : ''} ${
@@ -64,7 +64,7 @@ class Rating extends React.Component {
             {i} stars
           </FontAwesomeIcon>
         )}
-      </a>
+      </button>
     ));
   }
 }

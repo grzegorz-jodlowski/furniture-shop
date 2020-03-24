@@ -1,8 +1,14 @@
 @import "../../../styles/settings.scss";
 
-a {
+button {
   text-decoration: none;
   color: $productBox-stars-color;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
 }
 
 .userRate,
