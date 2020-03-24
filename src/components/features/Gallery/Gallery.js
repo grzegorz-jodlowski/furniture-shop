@@ -13,7 +13,9 @@ import {
   faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
+
 import Button from '../../common/Button/Button';
+import initialState from '../../../redux/initialState';
 
 
 const Gallery = ({products}) => {
@@ -42,7 +44,7 @@ const Gallery = ({products}) => {
               </ul>
             </div>
             <div className={styles.product}>
-              <img src={products[0].photo} alt='product-1' />
+              <img src={initialState.products[0].photo} alt='product-1' />
               <div className={styles.buttons}>
                 <Tooltip
                   placement='right'
@@ -83,7 +85,7 @@ const Gallery = ({products}) => {
               </div>
               <div className={styles.content}>
                 <div className={styles.triangleTopLeft} />
-                <h5>{products[0].name}</h5>
+                <h5>{initialState.products[0].name}</h5>
                 <div className={styles.stars}>
                   <span>
                     <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
@@ -95,8 +97,8 @@ const Gallery = ({products}) => {
                 </div>
                 <div className={styles.triangleBottomRight} />
                 <div className={styles.price}>
-                  <h3>$ {products[0].price}</h3>
-                  <h3> <s>$ {products[0].oldPrice}</s></h3>
+                  <h3>$ {initialState.products[0].price}</h3>
+                  <h3> <s>$ {initialState.products[0].oldPrice}</s></h3>
                 </div>
               </div>
             </div>
@@ -104,17 +106,16 @@ const Gallery = ({products}) => {
               <Button className={styles.preview}>
                 <p>{'<'}</p>
               </Button>
-              <div className={styles.slides}>
-                <img
-                  src={products[0].photo}
-                  alt='pic'
-                  className={styles.slidePhoto + ' ' + styles.active}
-                />
-                <img src={products[1].photo} alt='photo' className={styles.slidePhoto} />
-                <img src={products[2].photo} alt='photo' className={styles.slidePhoto} />
-                <img src={products[3].photo} alt='photo' className={styles.slidePhoto} />
-                <img src={products[4].photo} alt='photo' className={styles.slidePhoto} />
-                <img src={products[5].photo} alt='photo' className={styles.slidePhoto} />
+              <div className={styles.thumbnails}>
+                {initialState.products.slice(0, 6).map(product => (
+
+                  <div key={product.id} className={styles.thumbnail + ' ' + styles.active}>
+                    <img
+                      src={product.photo}
+                      alt=''
+                    />
+                  </div>
+                ))}
               </div>
               <Button className={styles.next}>
                 <p>{'>'}</p>
@@ -122,10 +123,10 @@ const Gallery = ({products}) => {
             </div>
           </dic>
           <div className={'col-6 ' + styles.picture}>
-            <img src={products[2].photo} alt='product'/>
+            <img src={initialState.products[2].photo} alt='product'/>
             <div className={styles.details}>
-              <h3>from <span>$ {products[2].price}</span></h3>
-              <h1>{products[2].name}</h1>
+              <h3>from <span>$ {initialState.products[2].price}</span></h3>
+              <h1>{initialState.products[2].name}</h1>
               <Button variant='greenBtn'>Shop now</Button>
             </div>
           </div>
@@ -134,6 +135,7 @@ const Gallery = ({products}) => {
     </div>
   );
 };
+
 
 Gallery.propTypes = {
   products: PropTypes.arrayOf(
@@ -151,5 +153,6 @@ Gallery.propTypes = {
     })
   ),
 };
+
 
 export default Gallery;
