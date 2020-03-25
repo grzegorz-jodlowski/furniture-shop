@@ -23,19 +23,15 @@ class ProductBoxOffer extends React.Component {
     addFavorite: PropTypes.func,
     compare: PropTypes.bool,
     id: PropTypes.string,
+    photo: PropTypes.string,
   };
 
-  handleFavorite(event) {
-    event.preventDefault();
-    this.props.addFavorite(this.props.id);
-  }
-
   render() {
-    const { name, oldPrice, price, stars, favorite, compare } = this.props;
+    const { name, oldPrice, price, stars, compare, photo } = this.props;
     return (
       <div className={styles.root}>
         <div className={styles.hot}>
-          <h2>Hoot deals</h2>
+          <h2>Hot deals</h2>
           <div className={styles.dots}>
             <ul>
               <li>
@@ -51,6 +47,7 @@ class ProductBoxOffer extends React.Component {
           </div>
         </div>
         <div className={styles.photo}>
+          <img src={photo} alt='bed' />
           <div className={styles.buttons}>
             <Button variant='small'>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
@@ -93,11 +90,7 @@ class ProductBoxOffer extends React.Component {
             <Button variant='outline'>
               <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
             </Button>
-            <Button
-              onClick={this.handleFavorite.bind(this)}
-              favorite={favorite}
-              variant='outline'
-            >
+            <Button variant='outline'>
               <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
             </Button>
             <Button compare={compare} variant='outline'>

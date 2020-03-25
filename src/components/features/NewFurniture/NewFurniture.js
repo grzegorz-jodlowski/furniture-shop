@@ -83,7 +83,6 @@ class NewFurniture extends React.Component {
                 }
               >
                 <ProductBox {...item} />
-                {console.log('item', item)}
               </div>
             ))}
           </div>
