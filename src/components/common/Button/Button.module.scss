@@ -58,3 +58,32 @@
   background-color: $primary;
   color: $button-compare-color;
 }
+
+.galleryBtn {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $button-outline-border;
+  color: $button-outline-color;
+  font-size: 13px;
+  line-height: 22px;
+  background-color: $gallery-btn-bg;
+  margin-bottom: 5px;
+  &:not(.noHover):hover {
+    background-color: $gallery-btn-hover-bkg;
+    color: $gallery-btn-hover-font;
+    @extend %hoverAnimation;
+    cursor: pointer;
+  }
+}
+
+.greenBtn {
+  background-color: $gallery-picture;
+  color: $button-main-color;
+  padding: 10px 20px;
+
+  &:hover {
+    background-color: lighten($gallery-picture, 20%);
+    text-decoration: none;
+    color: $text-color;
+  }
+}
