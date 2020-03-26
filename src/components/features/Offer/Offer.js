@@ -17,9 +17,27 @@ class Offer extends React.Component {
     const { products } = this.props;
     return (
       <div className={styles.box}>
-        {products.map(item => (
-          <ProductBoxOffer key={item.id} {...item} />
-        ))}
+        <div className={styles.wrapper}>
+          <div className={styles.hot}>
+            <h2>Hot deals</h2>
+            <div className={styles.dots}>
+              <ul>
+                <li>
+                  <a className={styles.active}></a>
+                </li>
+                <li>
+                  <a></a>
+                </li>
+                <li>
+                  <a></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          {products.map(item => (
+            <ProductBoxOffer key={item.id} {...item} />
+          ))}
+        </div>
         <div className={styles.slider}>
           <img src='/images/living-room.jpg' alt='furniture' />
           <Button variant='nextBackBtn'>

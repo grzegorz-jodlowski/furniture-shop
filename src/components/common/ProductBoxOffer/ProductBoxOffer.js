@@ -30,22 +30,6 @@ class ProductBoxOffer extends React.Component {
     const { name, oldPrice, price, stars, compare, photo } = this.props;
     return (
       <div className={styles.root}>
-        <div className={styles.hot}>
-          <h2>Hot deals</h2>
-          <div className={styles.dots}>
-            <ul>
-              <li>
-                <a className={styles.active}></a>
-              </li>
-              <li>
-                <a></a>
-              </li>
-              <li>
-                <a></a>
-              </li>
-            </ul>
-          </div>
-        </div>
         <div className={styles.photo}>
           <img src={photo} alt='bed' />
           <div className={styles.buttons}>
