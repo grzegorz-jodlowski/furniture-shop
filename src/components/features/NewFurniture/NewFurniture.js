@@ -29,10 +29,11 @@ class NewFurniture extends React.Component {
 
   CompareProduct( products, remove) {
     return (
-      <div className={styles.compereContainer}>
-        {products.map(({ img, id, name }) => (
+      <div className={styles.compareContainer}>
+        {products && products.map(({ img, id, name }) => (
+
           <div key={id} className={styles.productImage}>
-            <img src={img} alt={`${name}`} />
+            <img src={img} alt={name} />
             <div className={styles.close} onClick={() => remove(id)}>
               x
             </div>
