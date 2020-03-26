@@ -1,6 +1,6 @@
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import Gallery from './Gallery';
-import {getAll} from '../../../redux/productsRedux';
+import { getAll } from '../../../redux/productsRedux';
 
 const mapStateToProps = state => ({
   products: getAll(state),
