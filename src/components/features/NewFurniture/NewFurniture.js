@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import SwipeComponent from '../../common/ SwipeComponent/SwipeComponent';
 
 class NewFurniture extends React.Component {
   state = {
@@ -92,19 +93,25 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div
-                key={item.id}
-                className={
-                  'col-lg-3 col-md-6 col-sm-12 ' +
+          <SwipeComponent
+            itemsCount={pagesCount}
+            activeItem={this.state.activePage}
+            swipeAction={this.handlePageChange.bind(this)}
+          >
+            <div className='row'>
+              {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
+                <div
+                  key={item.id}
+                  className={
+                    'col-lg-3 col-md-6 col-sm-12 ' +
                   (this.state.setActive ? 'fade' : 'fade show')
-                }
-              >
-                <ProductBox {...item} />
-              </div>
-            ))}
-          </div>
+                  }
+                >
+                  <ProductBox {...item} />
+                </div>
+              ))}
+            </div>
+          </SwipeComponent>
         </div>
       </div>
     );
