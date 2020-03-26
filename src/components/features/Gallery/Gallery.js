@@ -17,12 +17,11 @@ import {
 import Button from '../../common/Button/Button';
 import initialState from '../../../redux/initialState';
 
-
-const Gallery = ({products}) => {
+const Gallery = ({ products }) => {
   return (
     <div className={styles.root}>
       <div className='container'>
-        <div  className='row'>
+        <div className='row'>
           <dic className='col-6 '>
             <div className={styles.heading}>
               <h3>Furniture gallery</h3>
@@ -61,7 +60,9 @@ const Gallery = ({products}) => {
                   arrowContent={<div className='rc-tooltip-arrow-inner' />}
                 >
                   <Button variant='galleryBtn'>
-                    <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faExchangeAlt}>
+                      Add to compare
+                    </FontAwesomeIcon>
                   </Button>
                 </Tooltip>
                 <Tooltip
@@ -79,7 +80,9 @@ const Gallery = ({products}) => {
                   arrowContent={<div className='rc-tooltip-arrow-inner' />}
                 >
                   <Button variant='galleryBtn'>
-                    <FontAwesomeIcon icon={faShoppingBasket}>Add to basket</FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faShoppingBasket}>
+                      Add to basket
+                    </FontAwesomeIcon>
                   </Button>
                 </Tooltip>
               </div>
@@ -98,7 +101,10 @@ const Gallery = ({products}) => {
                 <div className={styles.triangleBottomRight} />
                 <div className={styles.price}>
                   <h3>$ {initialState.products[0].price}</h3>
-                  <h3> <s>$ {initialState.products[0].oldPrice}</s></h3>
+                  <h3>
+                    {' '}
+                    <s>$ {initialState.products[0].oldPrice}</s>
+                  </h3>
                 </div>
               </div>
             </div>
@@ -107,12 +113,16 @@ const Gallery = ({products}) => {
                 <p>{'<'}</p>
               </Button>
               <div className={styles.thumbnails}>
-                {initialState.products.slice(0, 6).map( (product, index) => (
+                {initialState.products.slice(0, 6).map((product, index) => (
                   <div key={product.id}>
                     <img
                       src={product.photo}
                       alt=''
-                      className = {(index === 0) ? styles.thumbnail + ' ' + styles.active : styles.thumbnail}
+                      className={
+                        index === 0
+                          ? styles.thumbnail + ' ' + styles.active
+                          : styles.thumbnail
+                      }
                     />
                   </div>
                 ))}
@@ -123,9 +133,11 @@ const Gallery = ({products}) => {
             </div>
           </dic>
           <div className={'col-6 ' + styles.picture}>
-            <img src={initialState.products[2].photo} alt='product'/>
+            <img src={initialState.products[2].photo} alt='product' />
             <div className={styles.details}>
-              <h3>from <span>$ {initialState.products[2].price}</span></h3>
+              <h3>
+                from <span>$ {initialState.products[2].price}</span>
+              </h3>
               <h1>{initialState.products[2].name}</h1>
               <Button variant='greenBtn'>Shop now</Button>
             </div>
@@ -135,7 +147,6 @@ const Gallery = ({products}) => {
     </div>
   );
 };
-
 
 Gallery.propTypes = {
   products: PropTypes.arrayOf(
@@ -153,6 +164,5 @@ Gallery.propTypes = {
     })
   ),
 };
-
 
 export default Gallery;

@@ -1,0 +1,115 @@
+@import "../../../styles/settings.scss";
+
+.box {
+  //background-color: red;
+  display: flex;
+  justify-content: space-between;
+  width: 1140px;
+  height: 530px;
+  margin: 15px auto;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+
+    .hot {
+      width: 100%;
+      height: 9%;
+      position: relative;
+      background-color: $offer-hot-deal-bgc;
+      color: $offer-hot-deal-text-color;
+      text-align: left;
+      text-transform: uppercase;
+
+      h2 {
+        font-size: 14px;
+        line-height: 50px;
+        padding-left: 15px;
+      }
+
+      .dots {
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        ul {
+          margin: 0;
+          padding-right: 15px;
+          list-style: none;
+          transform: translateY(15px);
+
+          li {
+            display: inline-block;
+            margin-left: 0.5rem;
+
+            a {
+              display: block;
+              width: 13px;
+              height: 13px;
+              border-radius: 6px;
+              background-color: $newFurniture-dots-a;
+              font-size: 0;
+
+              &.active,
+              &:hover {
+                background-color: $primary;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slider {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 91%;
+    }
+
+    &::after {
+      content: '';
+      background-color: $offer-img-title-bgc;
+      opacity: .5;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 200px;
+
+    }
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%);
+      text-transform: uppercase;
+      text-align: center;
+      color: $offer-img-title-color;
+      z-index: 5;
+
+      h2 {
+        font-size: 54px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+
+      .bold{
+        font-weight: bold;
+      }
+    }
+  }
+}
