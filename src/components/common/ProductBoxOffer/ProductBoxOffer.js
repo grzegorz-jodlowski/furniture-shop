@@ -1,74 +1,80 @@
-/* eslint-disable indent */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ProductBox.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import Button from '../Button/Button';
-import Rating from '../Rating/RatingContainer';
+import styles from './ProductBoxOffer.module.scss';
 
-class ProductBox extends React.Component {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faStar,
+  faExchangeAlt,
+  faShoppingBasket,
+} from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar, faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
+import Button from '../Button/Button';
+
+class ProductBoxOffer extends React.Component {
   static propTypes = {
     children: PropTypes.node,
     name: PropTypes.string,
     price: PropTypes.number,
     oldPrice: PropTypes.number,
-    promo: PropTypes.string,
     stars: PropTypes.number,
     favorite: PropTypes.bool,
     addFavorite: PropTypes.func,
     compare: PropTypes.bool,
     id: PropTypes.string,
-    userRate: PropTypes.number,
     photo: PropTypes.string,
   };
 
-  handleFavorite(event) {
-    event.preventDefault();
-    this.props.addFavorite(this.props.id);
-  }
-
   render() {
-    const {
-      id,
-      name,
-      oldPrice,
-      price,
-      promo,
-      stars,
-      favorite,
-      compare,
-      userRate,
-      photo,
-    } = this.props;
+    const { name, oldPrice, price, stars, compare, photo } = this.props;
     return (
       <div className={styles.root}>
         <div className={styles.photo}>
           <img src={photo} alt='bed' />
-          {promo && <div className={styles.sale}>{promo}</div>}
           <div className={styles.buttons}>
-            <Button variant='small'>Quick View</Button>
             <Button variant='small'>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
             </Button>
           </div>
+          <div className={styles.time}>
+            <span className={styles.hour}>25</span>
+            <span>days</span>
+          </div>
+          <div className={styles.time}>
+            <span className={styles.hour}>10</span>
+            <span>hrs</span>
+          </div>
+          <div className={styles.time}>
+            <span className={styles.hour}>45</span>
+            <span>mins</span>
+          </div>
+          <div className={styles.time}>
+            <span className={styles.hour}>30</span>
+            <span>sec</span>
+          </div>
         </div>
         <div className={styles.content}>
           <h5>{name}</h5>
-          <div>
-            <Rating stars={stars} userRate={userRate} id={id} />
+          <div className={styles.stars}>
+            {[1, 2, 3, 4, 5].map(i => (
+              <a key={i} href='#'>
+                {i <= stars ? (
+                  <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                ) : (
+                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                )}
+              </a>
+            ))}
           </div>
         </div>
         <div className={styles.line}></div>
         <div className={styles.actions}>
           <div className={styles.outlines}>
-            <Button
-              onClick={this.handleFavorite.bind(this)}
-              favorite={favorite}
-              variant='outline'
-            >
+            <Button variant='outline'>
+              <FontAwesomeIcon icon={faEye}>Favorite</FontAwesomeIcon>
+            </Button>
+            <Button variant='outline'>
               <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
             </Button>
             <Button compare={compare} variant='outline'>
@@ -82,9 +88,7 @@ class ProductBox extends React.Component {
                 $ {oldPrice}
               </Button>
             )}
-            <Button noHover variant='small'>
-              $ {price}
-            </Button>
+            <Button variant='small'>{price}</Button>
           </div>
         </div>
       </div>
@@ -92,4 +96,4 @@ class ProductBox extends React.Component {
   }
 }
 
-export default ProductBox;
+export default ProductBoxOffer;

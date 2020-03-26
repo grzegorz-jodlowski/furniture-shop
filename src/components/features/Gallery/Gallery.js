@@ -173,5 +173,4 @@ Gallery.propTypes = {
   ),
 };
 
-
 export default Gallery;
