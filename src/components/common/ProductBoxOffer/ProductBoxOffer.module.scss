@@ -3,9 +3,10 @@
 .root {
   background-color: $productBox-root-bgc;
   border: 1px solid $productBox-root-border;
+  border-top: none;
   margin-bottom: 2rem;
   width: 100%;
-  height: 91%;
+  height: 94%;
 
   &:hover {
     .photo .buttons {

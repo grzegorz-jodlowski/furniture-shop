@@ -2,10 +2,11 @@ import { connect } from 'react-redux';
 
 import Offer from './Offer';
 
-import { getOffer } from '../../../redux/productsRedux.js';
+import { getOffer, getUpTo } from '../../../redux/productsRedux.js';
 
 const mapStateToProps = state => ({
   products: getOffer(state),
+  upToProducts: getUpTo(state),
 });
 
 export default connect(mapStateToProps)(Offer);
