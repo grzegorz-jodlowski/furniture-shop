@@ -17,6 +17,7 @@ $orange: #d58e32;
 $black: #000;
 $white: #ffffff;
 $green: #69c831;
+$background-color: $white;
 
 // VARIABLES WE ARE USING IN ANOTHER FILES
 
@@ -117,7 +118,6 @@ $gallery-price: $lightGray;
 $gallery-picture: $green;
 $gallery-overly: $mediumLightGrayishBlue;
 
-
 /*OTHER*/
 
 $primary: $orange;
@@ -129,6 +129,12 @@ $form-border-color: $veryDarkGray;
 
 $base-padding: 24px;
 
+//Media breakpoints
+
+$laptop-breakpoint: 1200px;
+$tablet-breakpoint: 768px;
+$mobile-breakpoint: 425px;
+
 /*hover animations*/
 
 /*transition values*/
@@ -137,10 +143,8 @@ $color-transition: 250ms;
 $border-color-transition: 250ms;
 
 %hoverAnimation {
-    transition:
-    background-color $background-color-transition linear,
-    color $color-transition linear,
+  transition: background-color $background-color-transition linear, color $color-transition linear,
     border-color $border-color-transition linear;
 
-   transform: translate(0, 0);
+  transform: translate(0, 0);
 }
