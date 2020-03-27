@@ -19,8 +19,24 @@ import initialState from '../../../redux/initialState';
 
 
 class Gallery extends React.Component {
+  state = {
+    activeTab: 'featured',
+  };
 
+  handleTabChange(arr, newTab) {
+    this.setState({ activeTab: newTab });
+  }
+  
   render() {
+
+    const { products } = this.props;
+    const { activeTab } = this.state;
+    const categories = [
+      { id: 'featured', name: 'featured' },
+      { id: 'topSeller', name: 'top seller' },
+      { id: 'saleOff', name: 'sale off' },
+      { id: 'topRated', name: 'top rated' },
+    ];
 
     return (
       <div className={styles.root}>
@@ -32,18 +48,18 @@ class Gallery extends React.Component {
               </div>
               <div className={styles.menu}>
                 <ul>
-                  <li>
-                    <span className={styles.active}>Featured</span>
-                  </li>
-                  <li>
-                    <span>Top seller</span>
-                  </li>
-                  <li>
-                    <span>Sale off</span>
-                  </li>
-                  <li>
-                    <span>Top rated</span>
-                  </li>
+                  {categories.map(el => (
+                    <li key={el.id}>
+                      <span
+                        className={el.id === activeTab && styles.active}
+                        onClick={() => {
+                          this.handleTabChange(el.id);
+                        }}
+                      >
+                        {el.name}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className={styles.product}>
@@ -85,6 +101,7 @@ class Gallery extends React.Component {
                       <FontAwesomeIcon icon={faShoppingBasket}>Add to basket</FontAwesomeIcon>
                     </Button>
                   </Tooltip>
+                  
                 </div>
                 <div className={styles.content}>
                   <div className={styles.triangleTopLeft} />
