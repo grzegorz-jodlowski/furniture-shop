@@ -11,17 +11,18 @@ class Review extends React.Component {
     text: PropTypes.node,
     name: PropTypes.node,
     description: PropTypes.node,
+    photo: PropTypes.string,
   };
 
   render() {
-    const { text, name, description } = this.props;
+    const { text, name, description, photo } = this.props;
     return (
       <div className={styles.main}>
         <FontAwesomeIcon icon={faQuoteRight} />
         <p className={styles.text}>{text}</p>
         <div className={styles.client}>
           <div className={styles.photo}>
-            <image />
+            <img src={photo} alt='client' />
           </div>
           <div className={styles.title}>
             <p className={styles.name}>{name}</p>
