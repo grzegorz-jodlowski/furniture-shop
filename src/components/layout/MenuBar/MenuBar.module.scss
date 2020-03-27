@@ -6,16 +6,71 @@
 
   :global(.container) > :global(.row) {
     height: 84px;
+    @media (max-width: $laptop-breakpoint) {
+      height: 140px;
+    }
+
+    @media (max-width: $tablet-breakpoint) {
+      height: 180px;
+    }
+    @media (max-width: $mobile-breakpoint) {
+      height: 84px;
+    }
+  }
+
+  .search {
+    @media (max-width: $laptop-breakpoint) {
+      order: 2;
+    }
+
+    @media (max-width: $mobile-breakpoint) {
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .hamburgerIcon {
+    display: none;
+    @media (max-width: $mobile-breakpoint) {
+      display: inline-block;
+      width: 40px;
+      height: 100%;
+      margin-left: 10px;
+      color: $primary;
+      border: 1px solid $text-color;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 900;
+      line-height: 40px;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary;
+        color: $text-color;
+        transition: background-color $background-color-transition linear;
+      }
+    }
   }
 
   .menu {
     display: flex;
     align-self: stretch;
 
+    @media (max-width: $laptop-breakpoint) {
+      order: 1;
+    }
+    @media (max-width: $mobile-breakpoint) {
+      display: none;
+    }
+
     ul {
       margin: 0;
       padding: 0;
       display: flex;
+
+      @media (max-width: $tablet-breakpoint) {
+        flex-wrap: wrap;
+      }
 
       li {
         list-style: none;
@@ -46,6 +101,26 @@
 
       &.active {
         border-color: $text-color;
+      }
+    }
+  }
+
+  .activeHamburgerMenu {
+    display: flex;
+    order: 3;
+    position: relative;
+    top: 84px;
+    width: 100%;
+    z-index: 100;
+    background-color: $background-color;
+
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      & li a {
+        width: 100%;
       }
     }
   }
