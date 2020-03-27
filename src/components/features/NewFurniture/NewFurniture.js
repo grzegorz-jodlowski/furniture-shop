@@ -27,6 +27,26 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
+  CompareProduct( products, remove) {
+    return (
+      <div className={styles.compareContainer}>
+        {products && products.map(({ img, id, name }) => (
+
+          <div key={id} className={styles.productImage}>
+            <img src={img} alt={name} />
+            <div className={styles.close} onClick={() => remove(id)}>
+              x
+            </div>
+          </div>
+        ))}
+        <a href='#'>Compare</a>
+        <div className={styles.close} onClick={() => remove()}>
+          x
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
