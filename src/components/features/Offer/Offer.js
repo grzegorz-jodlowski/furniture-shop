@@ -91,7 +91,7 @@ class Offer extends React.Component {
       autoplay: true,
       autoplaySpeed: 3000,
       dots: true,
-      dotsClass: styles.test,
+      dotsClass: styles.dot,
       pauseOnDotsHover: true,
     };
 

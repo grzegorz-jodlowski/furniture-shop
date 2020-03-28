@@ -83,17 +83,15 @@
   }
 }
 
-.test {
+.dot {
   position: absolute;
   top: -70px;
   right: 0;
   list-style: none;
 
   li {
-  // position: relative;
   display: inline-block;
   margin-right: 0.5rem;
-  // background-color: orange;
 
     button {
 
@@ -108,7 +106,7 @@
           font-size: 60px;
           content: '•';
           color: $newFurniture-dots-a;
+        }
       }
-    }
     }
   }
