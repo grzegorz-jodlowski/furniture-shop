@@ -3,28 +3,44 @@ import styles from './ClientFeedback.module.scss';
 import PropTypes from 'prop-types';
 
 import Review from '../../common/Review/Review';
+import SwipeComponent from '../../common/ SwipeComponent/SwipeComponent';
 
 class ClientFeedback extends React.Component {
   state = {
     activePage: 0,
+    setActive: false,
   };
 
   static propTypes = {
     reviews: PropTypes.array,
   };
 
+  handlePageChange(newPage) {
+    this.setState({
+      activePage: newPage,
+      setActive: true,
+    });
+
+    setTimeout(() => {
+      this.setState({ setActive: false });
+    }, 150);
+  }
+
   render() {
+    const { reviews } = this.props;
     const { activePage } = this.state;
 
+    const pagesCount = Math.ceil(reviews.length / 1);
+
     const dots = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < pagesCount; i++) {
       dots.push(
         <li>
-          <a className={i === activePage && styles.active}>page {i}</a>
+          <a onClick={() => this.handlePageChange(i)}
+            className={i === activePage && styles.active}>page {i}</a>
         </li>
       );
     }
-    const { reviews } = this.props;
     return (
       <div className='container'>
         <div className={'col-lg-auto col-12 ' + styles.main}>
@@ -36,9 +52,18 @@ class ClientFeedback extends React.Component {
               <ul>{dots}</ul>
             </div>
           </div>
-          {reviews.map(review => (
-            <Review key={review.id} {...review} />
-          ))}
+          <SwipeComponent
+            itemsCount={pagesCount}
+            activeItem={this.state.activePage}
+            swipeAction={this.handlePageChange.bind(this)}
+          >
+            {reviews.slice(activePage * 1, (activePage + 1)).map(review => (
+              <div className={styles.wrapper +
+                (this.state.setActive ? ' fade' : ' fade show')} key={review.id}>
+                <Review {...review} />
+              </div>
+            ))}
+          </SwipeComponent>
         </div>
       </div>
     );
