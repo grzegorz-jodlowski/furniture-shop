@@ -66,6 +66,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      offer: true,
       photo: '/images/products/beds/bed4.jpeg',
     },
     {
