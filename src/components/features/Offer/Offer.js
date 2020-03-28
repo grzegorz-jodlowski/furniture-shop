@@ -8,6 +8,10 @@ import ProductBoxOffer from '../../common/ProductBoxOffer/ProductBoxOffer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
+
 class Offer extends React.Component {
   state = {
     activePage: 0,
@@ -60,12 +64,6 @@ class Offer extends React.Component {
     }, 150);
   }
 
-  autoPlay(newPage) {
-    setInterval(() => {
-      // this.setState({ activePage: x++ });
-      console.log('jjj', newPage);
-    }, 1000);
-  }
 
   render() {
     const { products, upToProducts } = this.props;
@@ -89,24 +87,31 @@ class Offer extends React.Component {
         </li>
       );
     }
+    const settings = {
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      dotsClass: styles.test,
+      pauseOnDotsHover: true,
+    };
 
     return (
       <div className={styles.box}>
         <div className={styles.wrapper}>
           <div className={styles.hot}>
             <h2>Hot deals</h2>
-            <div className={styles.dots}>
-              <ul>{dots}</ul>
-            </div>
+
           </div>
-          {products.slice(activePage * 1, activePage + 1).map(item => (
-            <div
-              key={item.id}
-              className={this.state.setActive ? ' fade' : ' fade show'}
-            >
-              <ProductBoxOffer {...item} />
-            </div>
-          ))}
+          <Slider {...settings}>
+            {products.map(item => (
+              <div
+                key={item.id}
+                className={this.state.setActive ? ' fade' : ' fade show'}
+              >
+                <ProductBoxOffer {...item} />
+              </div>
+            ))}
+          </Slider>
         </div>
         <div className={styles.slider}>
           <img

@@ -29,38 +29,6 @@
         line-height: 50px;
         padding-left: 15px;
       }
-
-      .dots {
-        position: absolute;
-        right: 0;
-        top: 0;
-
-        ul {
-          margin: 0;
-          padding-right: 15px;
-          list-style: none;
-
-          li {
-            display: inline-block;
-            margin-left: 0.5rem;
-
-            a {
-              display: block;
-              width: 13px;
-              height: 13px;
-              border-radius: 6px;
-              background-color: $newFurniture-dots-a;
-              font-size: 0;
-
-              &.active,
-              &:hover {
-                background-color: $primary;
-                cursor: pointer;
-              }
-            }
-          }
-        }
-      }
     }
   }
 
@@ -114,3 +82,33 @@
     }
   }
 }
+
+.test {
+  position: absolute;
+  top: -70px;
+  right: 0;
+  list-style: none;
+
+  li {
+  // position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+  // background-color: orange;
+
+    button {
+
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background: transparent;
+      font-size: 0;
+
+        &:before{
+          font-size: 60px;
+          content: '•';
+          color: $newFurniture-dots-a;
+      }
+    }
+    }
+  }
