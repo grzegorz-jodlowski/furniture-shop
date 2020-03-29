@@ -54,7 +54,7 @@ const initialState = {
       oldPrice: 50,
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
       offer: true,
       photo: '/images/products/beds/bed4.jpeg',
@@ -65,7 +65,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
       photo: '/images/products/beds/bed5.jpeg',
     },
@@ -75,7 +75,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
       photo: '/images/products/beds/bed6.jpeg',
     },
@@ -85,7 +85,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
       photo: '/images/products/beds/bed1.jpeg',
     },
@@ -95,7 +95,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
       photo: '/images/products/beds/bed2.jpeg',
     },
@@ -125,6 +125,7 @@ const initialState = {
       stars: 2,
       promo: '',
       newFurniture: true,
+      favorite: true,
     },
     {
       id: 'aenean-ru-bristique-12',
@@ -186,7 +187,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -195,8 +196,9 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
+      favorite: true,
     },
     {
       id: 'aenean-ru-bristique-20',
@@ -204,7 +206,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -213,7 +215,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -222,7 +224,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -231,7 +233,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -240,7 +242,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -249,7 +251,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -258,8 +260,9 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
+      favorite: true,
     },
     {
       id: 'aenean-24B',
@@ -267,8 +270,9 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
+      favorite: true,
     },
     {
       id: 'aenean-24C',
@@ -276,7 +280,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -285,7 +289,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -294,7 +298,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -303,7 +307,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -312,7 +316,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -321,7 +325,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -330,7 +334,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -339,7 +343,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -348,7 +352,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -357,7 +361,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -366,7 +370,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -375,7 +379,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -384,7 +388,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -393,7 +397,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -402,7 +406,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -411,7 +415,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -420,7 +424,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -429,7 +433,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -438,7 +442,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -447,7 +451,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -456,7 +460,7 @@ const initialState = {
       category: 'chair',
       price: 34,
       stars: 5,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -465,7 +469,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 3,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -474,7 +478,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 2,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -483,7 +487,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 4,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -492,7 +496,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 1,
-      promo: ' ',
+      promo: 'sale',
       newFurniture: true,
     },
     {
@@ -501,7 +505,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -510,7 +514,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -519,7 +523,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -528,7 +532,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -537,7 +541,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -546,7 +550,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -555,7 +559,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -564,7 +568,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -573,7 +577,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -582,7 +586,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -591,7 +595,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -600,7 +604,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -609,7 +613,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -618,7 +622,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -627,7 +631,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -636,7 +640,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -645,7 +649,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -654,7 +658,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -663,7 +667,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -672,7 +676,7 @@ const initialState = {
       category: 'sofa',
       price: 34,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -681,7 +685,7 @@ const initialState = {
       category: 'table',
       price: 32,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -690,7 +694,7 @@ const initialState = {
       category: 'table',
       price: 12,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -699,7 +703,7 @@ const initialState = {
       category: 'table',
       price: 56,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -708,7 +712,7 @@ const initialState = {
       category: 'table',
       price: 89,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -717,7 +721,7 @@ const initialState = {
       category: 'table',
       price: 32,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -726,7 +730,7 @@ const initialState = {
       category: 'table',
       price: 12,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -735,7 +739,7 @@ const initialState = {
       category: 'table',
       price: 56,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -744,7 +748,7 @@ const initialState = {
       category: 'table',
       price: 89,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -753,7 +757,7 @@ const initialState = {
       category: 'table',
       price: 32,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -762,7 +766,7 @@ const initialState = {
       category: 'table',
       price: 12,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -771,7 +775,7 @@ const initialState = {
       category: 'table',
       price: 56,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -780,7 +784,7 @@ const initialState = {
       category: 'table',
       price: 89,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -789,7 +793,7 @@ const initialState = {
       category: 'table',
       price: 32,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -798,7 +802,7 @@ const initialState = {
       category: 'table',
       price: 12,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -807,7 +811,7 @@ const initialState = {
       category: 'table',
       price: 56,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -816,7 +820,7 @@ const initialState = {
       category: 'table',
       price: 89,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -825,7 +829,7 @@ const initialState = {
       category: 'table',
       price: 32,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -834,7 +838,7 @@ const initialState = {
       category: 'table',
       price: 12,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -843,7 +847,7 @@ const initialState = {
       category: 'table',
       price: 56,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -852,7 +856,7 @@ const initialState = {
       category: 'table',
       price: 89,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -861,7 +865,7 @@ const initialState = {
       category: 'table',
       price: 32,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -870,7 +874,7 @@ const initialState = {
       category: 'table',
       price: 12,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -879,7 +883,7 @@ const initialState = {
       category: 'table',
       price: 56,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -888,7 +892,7 @@ const initialState = {
       category: 'table',
       price: 89,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -897,7 +901,7 @@ const initialState = {
       category: 'dining',
       price: 32,
       stars: 3,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -906,7 +910,7 @@ const initialState = {
       category: 'dining',
       price: 12,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -915,7 +919,7 @@ const initialState = {
       category: 'dining',
       price: 56,
       stars: 4,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -924,7 +928,7 @@ const initialState = {
       category: 'dining',
       price: 89,
       stars: 1,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
@@ -942,7 +946,7 @@ const initialState = {
       category: 'dining',
       price: 12,
       stars: 2,
-      promo: ' ',
+      promo: '',
       newFurniture: true,
     },
     {
