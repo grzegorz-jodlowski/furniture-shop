@@ -11,7 +11,7 @@ import {
   faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import FadeIn from 'react-fade-in';
 import Button from '../../common/Button/Button';
