@@ -53,6 +53,10 @@
             font-size: 16px;
             display: block;
             cursor: pointer;
+            @media (max-width: 990px ) {
+              padding: 15px 2px;
+              font-size: 15px;
+            }
 
             &.active,
             &:hover {
@@ -256,15 +260,8 @@
   }
 }
 
-@media (max-width: $small-laptop-breakpoint ) {
+@media (max-width: $tablet-breakpoint ) {
   .picture {
     display: none;
   }
 }
-
-
-/*
-$laptop-breakpoint
-$tablet-breakpoint
-$mobile-breakpoint
-*/

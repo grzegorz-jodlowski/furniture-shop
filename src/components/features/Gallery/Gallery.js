@@ -134,24 +134,25 @@ class Gallery extends React.Component {
     const windowWidth = window.innerWidth;
 
     let mode;
-    if (windowWidth > 1020) {
+    if (windowWidth > 1200) {
       mode = 6 ;
-    } else if (windowWidth > 767) {
+    } else if (windowWidth > 990) {
       mode = 5;
+    } else if (windowWidth > 767) {
+      mode = 3;
     } else {
-      mode = 4;
+      mode = 5;
     }
 
     return (
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-12 col-md-12 col-lg-6 '>
+            <div className='col-12 col-md-6 col-lg-6 '>
               <div className={styles.heading}>
                 <h3>Furniture gallery</h3>
               </div>
               <div className={styles.menu}>
-
                 <ul>
                   {categories.map(el => (
                     <li key={el.id}>
@@ -166,7 +167,6 @@ class Gallery extends React.Component {
                     </li>
                   ))}
                 </ul>
-
               </div>
               <FadeIn transitionDuration={2000}>
                 <div className={styles.productSlider }>
