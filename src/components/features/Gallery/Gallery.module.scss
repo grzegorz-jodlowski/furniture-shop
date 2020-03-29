@@ -256,13 +256,7 @@
   }
 }
 
-@media (max-width: $mobile-breakpoint ) {
-  .picture {
-    display: none;
-  }
-}
-
-@media (max-width: $tablet-breakpoint ) {
+@media (max-width: $small-laptop-breakpoint ) {
   .picture {
     display: none;
   }

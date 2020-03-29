@@ -35,6 +35,17 @@ class Gallery extends React.Component {
     },
   };
 
+
+  resize = () => this.forceUpdate()
+
+  componentDidMount() {
+    window.addEventListener('resize', this.resize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize);
+  }
+
   setNewCurrentProduct(el) {
     this.setState({
       currentProduct: {
@@ -61,6 +72,7 @@ class Gallery extends React.Component {
   }
 
   moveLeft() {
+
     const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
     if (this.state.activePage > 0 && this.state.activePage < pagesCount) {
       this.setState(prevState => ({
@@ -70,7 +82,7 @@ class Gallery extends React.Component {
   }
 
   filterProducts(arr, activeTab) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       switch (activeTab) {
         case 'featured':
           this.setState(
@@ -108,6 +120,7 @@ class Gallery extends React.Component {
     this.setNewCurrentProduct(this.state.filteredArr[0]);
   }
 
+
   render() {
     const { products } = this.props;
     const { activeTab, filteredArr, activePage, currentProduct } = this.state;
@@ -117,6 +130,17 @@ class Gallery extends React.Component {
       { id: 'saleOff', name: 'sale off' },
       { id: 'topRated', name: 'top rated' },
     ];
+
+    const windowWidth = window.innerWidth;
+
+    let mode;
+    if (windowWidth > 1020) {
+      mode = 6 ;
+    } else if (windowWidth > 767) {
+      mode = 5;
+    } else {
+      mode = 4;
+    }
 
     return (
       <div className={styles.root}>
@@ -196,7 +220,7 @@ class Gallery extends React.Component {
                           <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
                           <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
                           <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                        </span> 
+                        </span>
                       </div>
                       <div className={styles.triangleBottomRight} />
                       <div className={styles.price}>
@@ -216,7 +240,7 @@ class Gallery extends React.Component {
                       <p>{'<'}</p>
                     </Button>
                     <div className={styles.thumbnails}>
-                      {filteredArr.slice(activePage*6, (activePage + 1) * 6 ).map( (product, index) => (
+                      {filteredArr.slice(activePage*mode, (activePage + 1) * mode ).map( (product) => (
                         <img
                           key={product.id}
                           src={product.photo}
