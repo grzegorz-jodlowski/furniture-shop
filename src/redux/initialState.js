@@ -20,6 +20,7 @@ const initialState = {
       favorite: true,
       compare: true,
       userRate: 4,
+      upTo: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -33,6 +34,7 @@ const initialState = {
       photo: '/images/products/beds/bed2.jpeg',
       favorite: true,
       compare: false,
+      upTo: true,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -46,6 +48,7 @@ const initialState = {
       favorite: false,
       compare: true,
       userRate: 3,
+      upTo: true,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -55,6 +58,7 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      offer: true,
       newFurniture: true,
       photo: '/images/products/beds/bed4.jpeg',
     },
@@ -66,6 +70,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      offer: true,
       photo: '/images/products/beds/bed5.jpeg',
     },
     {
@@ -75,8 +80,10 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      offer: true,
       newFurniture: true,
       photo: '/images/products/beds/bed6.jpeg',
+      upTo: true,
     },
     {
       id: 'aenean-ru-bristique-7',
