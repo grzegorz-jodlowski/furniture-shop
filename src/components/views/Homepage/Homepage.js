@@ -15,8 +15,8 @@ const Homepage = () => (
     <Offer />
     <FeatureBoxes />
     <NewFurniture />
-    <ClientFeedback />
     <Gallery />
+    <ClientFeedback />
   </div>
 );
 
