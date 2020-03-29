@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import 'rc-tooltip/assets/bootstrap_white.css';
 import Tooltip from 'rc-tooltip';
+import SwipeComponent from '../../common/ SwipeComponent/SwipeComponent';
+
 
 import {
   faStar,
@@ -120,6 +122,9 @@ class Gallery extends React.Component {
     this.setNewCurrentProduct(this.state.filteredArr[0]);
   }
 
+  handlePageChange(newPage) {
+    this.setState({ activePage: newPage });
+  }
 
   render() {
     const { products } = this.props;
@@ -132,6 +137,7 @@ class Gallery extends React.Component {
     ];
 
     const windowWidth = window.innerWidth;
+    const pagesCount = products.length;
 
     let mode;
     if (windowWidth > 1200) {
@@ -239,20 +245,29 @@ class Gallery extends React.Component {
                     >
                       <p>{'<'}</p>
                     </Button>
-                    <div className={styles.thumbnails}>
-                      {filteredArr.slice(activePage*mode, (activePage + 1) * mode ).map( (product) => (
-                        <img
-                          key={product.id}
-                          src={product.photo}
-                          alt=''
-                          className = {product.photo === currentProduct.photo ? styles.thumbnail + ' ' + styles.active : styles.thumbnail}
-                          onClick={e => {
-                            e.preventDefault();
-                            this.setNewCurrentProduct(product);
-                          }}
-                        />
-                      ))}
-                    </div>
+                    <SwipeComponent
+                      rightAction={() => this.handlePageChange(activePage > 0 ? activePage - 1 : 0)}
+                      leftAction={() =>
+                        this.handlePageChange(
+                          activePage + 1 < pagesCount ? activePage + 1 : activePage
+                        )
+                      }
+                    >
+                      <div className={styles.thumbnails}>
+                        {filteredArr.slice(activePage*mode, (activePage + 1) * mode ).map( (product) => (
+                          <img
+                            key={product.id}
+                            src={product.photo}
+                            alt=''
+                            className = {product.photo === currentProduct.photo ? styles.thumbnail + ' ' + styles.active : styles.thumbnail}
+                            onClick={e => {
+                              e.preventDefault();
+                              this.setNewCurrentProduct(product);
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </SwipeComponent>
                     <Button
                       className={styles.next}
                       onClick={e => {
