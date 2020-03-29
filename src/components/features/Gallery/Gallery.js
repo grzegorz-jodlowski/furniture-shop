@@ -122,7 +122,7 @@ class Gallery extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-6'>
+            <div className='col-12 col-md-12 col-lg-6 '>
               <div className={styles.heading}>
                 <h3>Furniture gallery</h3>
               </div>

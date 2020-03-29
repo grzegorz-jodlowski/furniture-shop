@@ -255,3 +255,22 @@
     }
   }
 }
+
+@media (max-width: $mobile-breakpoint ) {
+  .picture {
+    display: none;
+  }
+}
+
+@media (max-width: $tablet-breakpoint ) {
+  .picture {
+    display: none;
+  }
+}
+
+
+/*
+$laptop-breakpoint
+$tablet-breakpoint
+$mobile-breakpoint
+*/
