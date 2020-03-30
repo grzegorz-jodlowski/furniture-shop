@@ -16,6 +16,22 @@ const initialState = {
       description: 'Furniture client',
       photo: '/images/man.jpg',
     },
+    {
+      id: 'second',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultrices lacus eget blandit. Morbi at enim dui. Nulla at dapibus nibh. Nulla imperdiet, lacus quis tincidunt imperdiet, dui libero imperdiet ante, vel maximus ex urna quis quam Nulla imperdiet, lacus quis tincidunt imperdiet, dui libero imperdiet ante, vel maximus ex urna quis quam',
+
+      name: 'Alan Wake',
+      description: 'Furniture client',
+      photo: '/images/man2.jpg',
+    },
+    {
+      id: 'third',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultrices lacus eget blandit. Morbi at enim dui. Nulla at dapibus nibh.',
+      name: 'Caroline Bishop',
+      description: 'Furniture client',
+      photo: '/images/woman.jpg',
+    },
   ],
   products: [
     {
