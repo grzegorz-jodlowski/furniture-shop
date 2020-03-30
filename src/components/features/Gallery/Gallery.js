@@ -15,6 +15,8 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 import FadeIn from 'react-fade-in';
 import Button from '../../common/Button/Button';
+import Rating from '../../common/Rating/RatingContainer';
+
 
 class Gallery extends React.Component {
   state = {
@@ -196,7 +198,7 @@ class Gallery extends React.Component {
                           <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
                           <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
                           <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                        </span> 
+                        </span>
                       </div>
                       <div className={styles.triangleBottomRight} />
                       <div className={styles.price}>
@@ -267,6 +269,7 @@ Gallery.propTypes = {
       category: PropTypes.string,
       price: PropTypes.number,
       stars: PropTypes.number,
+      userRate: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
       favorite: PropTypes.bool,
