@@ -27,7 +27,7 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
-  CompareProduct( products, remove) {
+  CompareProduct(products, remove) {
     return (
       <div className={styles.compareContainer}>
         {products && products.map(({ img, id, name }) => (
@@ -110,25 +110,25 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts
-              .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
-              .map(item => (
           <SwipeComponent
             itemsCount={pagesCount}
             activeItem={this.state.activePage}
             swipeAction={this.handlePageChange.bind(this)}
           >
-                <div
-                  key={item.id}
-                  className={
-                    'col-lg-3 col-md-6 col-sm-12 ' +
-                  (this.state.setActive ? 'fade' : 'fade show')
-                  }
-                >
-                  <ProductBox {...item} />
-                </div>
-              ))}
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
+                .map(item => (
+                  <div
+                    key={item.id}
+                    className={
+                      'col-lg-3 col-md-6 col-sm-12 ' +
+                      (this.state.setActive ? 'fade' : 'fade show')
+                    }
+                  >
+                    <ProductBox {...item} />
+                  </div>
+                ))}
             </div>
           </SwipeComponent>
         </div>
