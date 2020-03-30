@@ -27,6 +27,13 @@ $header-topbar-bg: $battleshipGray;
 $header-topbar-a: $white;
 $header-bg: $shadow;
 
+/*SEARCH*/
+
+$search-bg: $white;
+$search-categpry-hover-bg: $white;
+$search-categpry-hover-border: $veryDarkGray;
+$search-hover-animation-bg: $orange;
+
 /*NEW FURNITURE*/
 
 $newFurniture-panelBar-border: $mediumLightGray;
@@ -90,6 +97,9 @@ $button-next-back-bgc: $darkGray;
 $button-next-back-color: $white;
 $button-next-back-hover: $orange;
 
+
+/*OFFER*/
+
 $offer-img-title-bgc: $black;
 $offer-img-title-color: $white;
 $offer-hot-deal-text-color: $white;
@@ -137,7 +147,6 @@ $tablet-breakpoint: 768px;
 $mobile-breakpoint: 425px;
 
 /*hover animations*/
-
 
 /*transition values*/
 $background-color-transition: 250ms;
