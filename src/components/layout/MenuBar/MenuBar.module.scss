@@ -56,9 +56,6 @@
     display: flex;
     align-self: stretch;
 
-    @media (max-width: $laptop-breakpoint) {
-      order: 1;
-    }
     @media (max-width: $mobile-breakpoint) {
       display: none;
     }
@@ -67,10 +64,6 @@
       margin: 0;
       padding: 0;
       display: flex;
-
-      @media (max-width: $tablet-breakpoint) {
-        flex-wrap: wrap;
-      }
 
       li {
         list-style: none;
@@ -91,6 +84,9 @@
       font-weight: 500;
       letter-spacing: 1px;
       @extend %hoverAnimation;
+      @media (max-width: $tablet-breakpoint) {
+        font-size: 12px;
+      }
 
       &:hover,
       &.active {
