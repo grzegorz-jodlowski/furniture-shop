@@ -15,12 +15,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import Button from '../../common/Button/Button';
-import initialState from '../../../redux/initialState';
+import Rating from '../../common/Rating/RatingContainer';
 
 
 class Gallery extends React.Component {
 
   render() {
+
+    const { products } = this.props;
 
     return (
       <div className={styles.root}>
@@ -47,7 +49,7 @@ class Gallery extends React.Component {
                 </ul>
               </div>
               <div className={styles.product}>
-                <img src={initialState.products[0].photo} alt='product-1' />
+                <img src={products[0].photo} alt='product-1' />
                 <div className={styles.buttons}>
                   <Tooltip
                     placement='right'
@@ -88,20 +90,14 @@ class Gallery extends React.Component {
                 </div>
                 <div className={styles.content}>
                   <div className={styles.triangleTopLeft} />
-                  <h5>{initialState.products[0].name}</h5>
+                  <h5>{products[0].name}</h5>
                   <div className={styles.stars}>
-                    <span>
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                      <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                    </span>
+                    <Rating stars={products[0].stars} userRate={products[0].userRate} id={products[0].id} />
                   </div>
                   <div className={styles.triangleBottomRight} />
                   <div className={styles.price}>
-                    <h3>$ {initialState.products[0].price}</h3>
-                    <h3> <s>$ {initialState.products[0].oldPrice}</s></h3>
+                    <h3>$ {products[0].price}</h3>
+                    <h3> <s>$ {products[0].oldPrice}</s></h3>
                   </div>
                 </div>
               </div>
@@ -110,7 +106,7 @@ class Gallery extends React.Component {
                   <p>{'<'}</p>
                 </Button>
                 <div className={styles.thumbnails}>
-                  {initialState.products.slice(0, 6).map( (product, index) => (
+                  {products.slice(0, 6).map( (product, index) => (
                     <div key={product.id}>
                       <img
                         src={product.photo}
@@ -126,10 +122,10 @@ class Gallery extends React.Component {
               </div>
             </div>
             <div className={'col-6 ' + styles.picture}>
-              <img src={initialState.products[2].photo} alt='product'/>
+              <img src={products[2].photo} alt='product'/>
               <div className={styles.details}>
-                <h3>from <span>$ {initialState.products[2].price}</span></h3>
-                <h1>{initialState.products[2].name}</h1>
+                <h3>from <span>$ {products[2].price}</span></h3>
+                <h1>{products[2].name}</h1>
                 <Button variant='greenBtn'>Shop now</Button>
               </div>
             </div>
@@ -149,6 +145,7 @@ Gallery.propTypes = {
       price: PropTypes.number,
       oldPrice: PropTypes.number,
       stars: PropTypes.number,
+      userRate: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
       favorite: PropTypes.bool,
