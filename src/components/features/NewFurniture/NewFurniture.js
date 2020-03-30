@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBoxContainer';
+import SwipeComponent from '../../common/ SwipeComponent/SwipeComponent';
 
 class NewFurniture extends React.Component {
   state = {
@@ -24,6 +25,26 @@ class NewFurniture extends React.Component {
 
   handleCategoryChange(newCategory) {
     this.setState({ activeCategory: newCategory });
+  }
+
+  CompareProduct( products, remove) {
+    return (
+      <div className={styles.compareContainer}>
+        {products && products.map(({ img, id, name }) => (
+
+          <div key={id} className={styles.productImage}>
+            <img src={img} alt={name} />
+            <div className={styles.close} onClick={() => remove(id)}>
+              x
+            </div>
+          </div>
+        ))}
+        <a href='#'>Compare</a>
+        <div className={styles.close} onClick={() => remove()}>
+          x
+        </div>
+      </div>
+    );
   }
 
   render() {
@@ -93,17 +114,23 @@ class NewFurniture extends React.Component {
             {categoryProducts
               .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
               .map(item => (
+          <SwipeComponent
+            itemsCount={pagesCount}
+            activeItem={this.state.activePage}
+            swipeAction={this.handlePageChange.bind(this)}
+          >
                 <div
                   key={item.id}
                   className={
                     'col-lg-3 col-md-6 col-sm-12 ' +
-                    (this.state.setActive ? 'fade' : 'fade show')
+                  (this.state.setActive ? 'fade' : 'fade show')
                   }
                 >
                   <ProductBox {...item} />
                 </div>
               ))}
-          </div>
+            </div>
+          </SwipeComponent>
         </div>
       </div>
     );

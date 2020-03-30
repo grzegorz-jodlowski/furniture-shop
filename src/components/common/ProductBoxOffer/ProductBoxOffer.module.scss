@@ -3,11 +3,18 @@
 .root {
   background-color: $productBox-root-bgc;
   border: 1px solid $productBox-root-border;
+  border-top: none;
   margin-bottom: 2rem;
+  width: 100%;
 
   &:hover {
     .photo .buttons {
       visibility: visible;
+    }
+
+    .photo .time {
+      visibility: visible;
+      cursor: pointer;
     }
 
     .actions .price > div:last-child {
@@ -17,6 +24,8 @@
 
   .photo {
     position: relative;
+    display: flex;
+    justify-content: space-between;
     padding: 80% 10px 0 10px;
     background: {
       color: $productBox-photo-color;
@@ -25,7 +34,7 @@
       repeat: no-repeat;
     }
     overflow: hidden;
-    align-items: flex-end;
+
     img {
       position: absolute;
       top: 0;
@@ -34,21 +43,36 @@
       height: 100%;
       object-fit: cover;
     }
-    .sale {
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: $productBox-sale-bgc;
-      border-radius: 50%;
-      color: $productBox-sale-color;
-      padding: 30px 15px 5px 15px;
-    }
 
     .buttons {
       visibility: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .time {
+      visibility: hidden;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      color: $offer-time-color;
+      background-color: $offer-time-bgc;
+      text-transform: uppercase;
+      font-size: 13px;
+      line-height: 1;
+      margin-bottom: 10px;
+      opacity: .9;
+      z-index: 22;
+
+      .hour {
+        font-size: 24px;
+      }
     }
   }
 
@@ -61,6 +85,13 @@
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
+    }
+
+    .stars {
+      a {
+        text-decoration: none;
+        color: $productBox-stars-color;
+      }
     }
   }
 
@@ -93,3 +124,5 @@
     align-items: center;
   }
 }
+
+

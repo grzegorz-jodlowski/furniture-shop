@@ -9,6 +9,7 @@ const Button = ({
   noHover,
   favorite,
   compare,
+  next,
   className: propClassName,
   ...props
 }) => {
@@ -48,6 +49,7 @@ Button.propTypes = {
   variant: PropTypes.string,
   favorite: PropTypes.bool,
   compare: PropTypes.bool,
+  next: PropTypes.bool,
 };
 
 export default Button;
