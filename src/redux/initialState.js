@@ -1118,6 +1118,38 @@ const initialState = {
   cart: {
     products: [],
   },
+  brands: [
+    {
+      id: 'layer-138',
+      name: 'Layer 138',
+      photo: '/images/brands/layer-138.png',
+    },
+    {
+      id: 'layer-139',
+      name: 'Layer 139',
+      photo: '/images/brands/layer-139.png',
+    },
+    {
+      id: 'layer-140',
+      name: 'Layer 140',
+      photo: '/images/brands/layer-140.png',
+    },
+    {
+      id: 'layer-141',
+      name: 'Layer 141',
+      photo: '/images/brands/layer-141.png',
+    },
+    {
+      id: 'layer-142',
+      name: 'Layer 142',
+      photo: '/images/brands/layer-142.png',
+    },
+    {
+      id: 'layer-143',
+      name: 'Layer 143',
+      photo: '/images/brands/layer-143.png',
+    },
+  ],
 };
 
 export default initialState;
