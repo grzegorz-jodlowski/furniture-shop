@@ -10,7 +10,9 @@ import {
   faShoppingBasket,
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
+
 import Button from '../Button/Button';
+import Rating from '../Rating/RatingContainer';
 
 class ProductBoxOffer extends React.Component {
   static propTypes = {
@@ -19,6 +21,7 @@ class ProductBoxOffer extends React.Component {
     price: PropTypes.number,
     oldPrice: PropTypes.number,
     stars: PropTypes.number,
+    userRate: PropTypes.number,
     favorite: PropTypes.bool,
     addFavorite: PropTypes.func,
     compare: PropTypes.bool,
@@ -27,7 +30,7 @@ class ProductBoxOffer extends React.Component {
   };
 
   render() {
-    const { name, oldPrice, price, stars, compare, photo } = this.props;
+    const { name, oldPrice, price, stars, userRate,compare, photo, id } = this.props;
     return (
       <div className={styles.root}>
         <div className={styles.photo}>
@@ -57,15 +60,7 @@ class ProductBoxOffer extends React.Component {
         <div className={styles.content}>
           <h5>{name}</h5>
           <div className={styles.stars}>
-            {[1, 2, 3, 4, 5].map(i => (
-              <a key={i} href='#'>
-                {i <= stars ? (
-                  <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                ) : (
-                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                )}
-              </a>
-            ))}
+            <Rating stars={stars} userRate={userRate} id={id} />
           </div>
         </div>
         <div className={styles.line}></div>
