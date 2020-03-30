@@ -8,4 +8,4 @@ const mapDispatchToProps = dispatch => ({
   updateUserRate: (id, rating) => dispatch(createActionUpdateUserRate({ id, rating })),
 });
 
-export default connect(null, mapDispatchToProps)(Rating);
+export default connect(null,mapDispatchToProps)(Rating);

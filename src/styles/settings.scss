@@ -96,6 +96,7 @@ $offer-hot-deal-text-color: $white;
 $offer-hot-deal-bgc: $darkGray;
 $offer-time-bgc: $darkGray;
 $offer-time-color: $white;
+$offer-active-dot: $orange;
 
 /*GALLERY*/
 
@@ -117,6 +118,10 @@ $gallery-price-bg: $veryDarkGray;
 $gallery-price: $lightGray;
 $gallery-picture: $green;
 $gallery-overly: $mediumLightGrayishBlue;
+
+/*BRANDS*/
+
+$brands-border: $lightGray;
 
 /*OTHER*/
 
@@ -142,7 +147,6 @@ $tablet-breakpoint: 768px;
 $mobile-breakpoint: 425px;
 
 /*hover animations*/
-
 
 /*transition values*/
 $background-color-transition: 250ms;

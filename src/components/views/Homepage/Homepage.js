@@ -6,8 +6,9 @@ import styles from './Homepage.module.scss';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import ClientFeedback from '../../features/ClientFeedback/ClientFeedbackContainer';
+import Brands from '../../features/Brands/BrandsContainer';
 import Offer from '../../features/Offer/OfferContainer';
-import Gallery from '../../features/Gallery/Gallery';
+import Gallery from '../../features/Gallery/GalleryContainer';
 
 
 const Homepage = () => (
@@ -17,6 +18,7 @@ const Homepage = () => (
     <NewFurniture />
     <ClientFeedback />
     <Gallery />
+    <Brands />
   </div>
 );
 

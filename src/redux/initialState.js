@@ -1,4 +1,5 @@
 const initialState = {
+  deviceMode: '',
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },
@@ -23,13 +24,14 @@ const initialState = {
       category: 'bed',
       oldPrice: 50,
       price: 30,
-      stars: 2,
+      stars: 0,
       promo: 'sale',
       newFurniture: true,
       photo: '/images/products/beds/bed1.jpeg',
       favorite: true,
       compare: true,
-      userRate: 4,
+      userRate: 2,
+      upTo: true,
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -43,6 +45,7 @@ const initialState = {
       photo: '/images/products/beds/bed2.jpeg',
       favorite: true,
       compare: false,
+      upTo: true,
     },
     {
       id: 'aenean-ru-bristique-3',
@@ -56,6 +59,7 @@ const initialState = {
       favorite: false,
       compare: true,
       userRate: 3,
+      upTo: true,
     },
     {
       id: 'aenean-ru-bristique-4',
@@ -65,8 +69,8 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
-      newFurniture: true,
       offer: true,
+      newFurniture: true,
       photo: '/images/products/beds/bed4.jpeg',
     },
     {
@@ -77,6 +81,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      offer: true,
       photo: '/images/products/beds/bed5.jpeg',
     },
     {
@@ -86,8 +91,10 @@ const initialState = {
       price: 30,
       stars: 2,
       promo: 'sale',
+      offer: true,
       newFurniture: true,
       photo: '/images/products/beds/bed6.jpeg',
+      upTo: true,
     },
     {
       id: 'aenean-ru-bristique-7',
@@ -1121,6 +1128,38 @@ const initialState = {
   cart: {
     products: [],
   },
+  brands: [
+    {
+      id: 'layer-138',
+      name: 'Layer 138',
+      photo: '/images/brands/layer-138.png',
+    },
+    {
+      id: 'layer-139',
+      name: 'Layer 139',
+      photo: '/images/brands/layer-139.png',
+    },
+    {
+      id: 'layer-140',
+      name: 'Layer 140',
+      photo: '/images/brands/layer-140.png',
+    },
+    {
+      id: 'layer-141',
+      name: 'Layer 141',
+      photo: '/images/brands/layer-141.png',
+    },
+    {
+      id: 'layer-142',
+      name: 'Layer 142',
+      photo: '/images/brands/layer-142.png',
+    },
+    {
+      id: 'layer-143',
+      name: 'Layer 143',
+      photo: '/images/brands/layer-143.png',
+    },
+  ],
 };
 
 export default initialState;

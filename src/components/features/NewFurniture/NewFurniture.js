@@ -27,7 +27,7 @@ class NewFurniture extends React.Component {
     this.setState({ activeCategory: newCategory });
   }
 
-  CompareProduct( products, remove) {
+  CompareProduct(products, remove) {
     return (
       <div className={styles.compareContainer}>
         {products && products.map(({ img, id, name }) => (
@@ -48,11 +48,27 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, deviceMode } = this.props;
     const { activeCategory, activePage } = this.state;
 
+    let productsPerPage;
+
+    switch (deviceMode) {
+      case 'phone':
+        productsPerPage = 1;
+        break;
+      case 'tablet':
+        productsPerPage = 2;
+        break;
+      case 'laptop':
+        productsPerPage = 8;
+        break;
+      default:
+        return 8;
+    }
+
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / productsPerPage);
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -100,17 +116,19 @@ class NewFurniture extends React.Component {
             swipeAction={this.handlePageChange.bind(this)}
           >
             <div className='row'>
-              {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-                <div
-                  key={item.id}
-                  className={
-                    'col-lg-3 col-md-6 col-sm-12 ' +
-                  (this.state.setActive ? 'fade' : 'fade show')
-                  }
-                >
-                  <ProductBox {...item} />
-                </div>
-              ))}
+              {categoryProducts
+                .slice(activePage * productsPerPage, (activePage + 1) * productsPerPage)
+                .map(item => (
+                  <div
+                    key={item.id}
+                    className={
+                      'col-lg-3 col-md-6 col-sm-12 ' +
+                      (this.state.setActive ? 'fade' : 'fade show')
+                    }
+                  >
+                    <ProductBox {...item} />
+                  </div>
+                ))}
             </div>
           </SwipeComponent>
         </div>
@@ -123,6 +141,7 @@ NewFurniture.propTypes = {
   active: PropTypes.bool,
   setActive: PropTypes.bool,
   children: PropTypes.node,
+  deviceMode: PropTypes.string,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
