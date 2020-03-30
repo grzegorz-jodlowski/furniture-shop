@@ -1,0 +1,44 @@
+.main{
+  text-align: center;
+  font-size: 24px;
+  margin: 20px auto;
+  width: 80%;
+
+  .text {
+    font-size: 14px;
+    margin-top: 25px;
+  }
+
+  .client {
+    display: flex;
+    width: 21%;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 45px;
+
+    .photo {
+      width: 68px;
+      height: 68px;
+
+      img {
+          width: 100%;
+          z-index: 99;
+          border-radius: 5px;
+        }
+    }
+
+    .title {
+      padding-top: 10px;
+
+      .name {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .description {
+        margin-top: -15px;
+        font-size: 14px;
+      }
+    }
+  }
+}

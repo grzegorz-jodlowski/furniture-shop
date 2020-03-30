@@ -1,0 +1,59 @@
+@import "../../../styles/settings.scss";
+
+.main {
+  height: 50px;
+  margin-bottom: 300px;
+
+  h3{
+    text-transform: uppercase;
+    color: $clientFeedback-header-color;
+    font-size: 20px;
+  }
+
+  .shortLine{
+    content: '';
+    display: inline-block;
+    width: 5%;
+    height: 4px;
+    background-color: $clientFeedback-shortLine-color;
+  }
+
+  .line {
+    width: 95%;
+    height: 3px;
+    background-color: $clientFeedback-longLine-color;
+  }
+
+  .dots {
+    position: absolute;
+    right: 0;
+    bottom: 40%;
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 1rem;
+      list-style: none;
+      background-color: $clientFeedback-dots-bgc;
+      transform: translateY(15px);
+
+      li {
+        display: inline-block;
+        margin-left: 0.5rem;
+
+        a {
+          display: block;
+          width: 13px;
+          height: 13px;
+          border-radius: 6px;
+          background-color: $clientFeedback-dots-a;
+          font-size: 0;
+
+          &.active,
+          &:hover {
+            background-color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
