@@ -2,21 +2,21 @@ import React from 'react';
 import styles from './Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+
 import 'rc-tooltip/assets/bootstrap_white.css';
 import Tooltip from 'rc-tooltip';
-
+import SwipeComponent from '../../common/ SwipeComponent/SwipeComponent';
 import {
   faStar,
   faExchangeAlt,
   faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
-import FadeIn from 'react-fade-in';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 import Rating from '../../common/Rating/RatingContainer';
-
+import FadeIn from 'react-fade-in';
 
 class Gallery extends React.Component {
   state = {
@@ -36,7 +36,13 @@ class Gallery extends React.Component {
       userRate: 4,
     },
   };
-
+  resize = () => this.forceUpdate()
+  componentDidMount() {
+    window.addEventListener('resize', this.resize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resize);
+  }
   setNewCurrentProduct(el) {
     this.setState({
       currentProduct: {
@@ -52,7 +58,6 @@ class Gallery extends React.Component {
       },
     });
   }
-
   moveRight() {
     const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
     if (this.state.activePage < pagesCount - 1) {
@@ -61,7 +66,6 @@ class Gallery extends React.Component {
       }));
     }
   }
-
   moveLeft() {
     const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
     if (this.state.activePage > 0 && this.state.activePage < pagesCount) {
@@ -70,9 +74,8 @@ class Gallery extends React.Component {
       }));
     }
   }
-
   filterProducts(arr, activeTab) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       switch (activeTab) {
         case 'featured':
           this.setState(
@@ -103,11 +106,14 @@ class Gallery extends React.Component {
       }
     });
   }
-
   async handleTabChange(arr, newTab) {
     this.setState({ activeTab: newTab });
     await this.filterProducts(arr, newTab);
     this.setNewCurrentProduct(this.state.filteredArr[0]);
+  }
+
+  handlePageChange(newPage) {
+    this.setState({ activePage: newPage });
   }
 
   render() {
@@ -120,16 +126,28 @@ class Gallery extends React.Component {
       { id: 'topRated', name: 'top rated' },
     ];
 
+    const windowWidth = window.innerWidth;
+    const pagesCount = products.length;
+
+    let mode;
+    if (windowWidth > 1200) {
+      mode = 6 ;
+    } else if (windowWidth > 990) {
+      mode = 5;
+    } else if (windowWidth > 767) {
+      mode = 3;
+    } else {
+      mode = 5;
+    }
     return (
       <div className={styles.root}>
         <div className='container'>
           <div className='row'>
-            <div className='col-6'>
+            <div className='col-12 col-md-6 col-lg-6 '>
               <div className={styles.heading}>
                 <h3>Furniture gallery</h3>
               </div>
               <div className={styles.menu}>
-
                 <ul>
                   {categories.map(el => (
                     <li key={el.id}>
@@ -144,7 +162,6 @@ class Gallery extends React.Component {
                     </li>
                   ))}
                 </ul>
-
               </div>
               <FadeIn transitionDuration={2000}>
                 <div className={styles.productSlider }>
@@ -192,13 +209,9 @@ class Gallery extends React.Component {
                       <div className={styles.triangleTopLeft} />
                       <h5>{currentProduct.name}</h5>
                       <div className={styles.stars}>
-                        <span>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                        </span>
+
+                        <Rating stars={products[0].stars} userRate={products[0].userRate} id={products[0].id} />
+
                       </div>
                       <div className={styles.triangleBottomRight} />
                       <div className={styles.price}>
@@ -217,20 +230,29 @@ class Gallery extends React.Component {
                     >
                       <p>{'<'}</p>
                     </Button>
-                    <div className={styles.thumbnails}>
-                      {filteredArr.slice(activePage*6, (activePage + 1) * 6 ).map( (product, index) => (
-                        <img
-                          key={product.id}
-                          src={product.photo}
-                          alt=''
-                          className = {product.photo === currentProduct.photo ? styles.thumbnail + ' ' + styles.active : styles.thumbnail}
-                          onClick={e => {
-                            e.preventDefault();
-                            this.setNewCurrentProduct(product);
-                          }}
-                        />
-                      ))}
-                    </div>
+                    <SwipeComponent
+                      rightAction={() => this.handlePageChange(activePage > 0 ? activePage - 1 : 0)}
+                      leftAction={() =>
+                        this.handlePageChange(
+                          activePage + 1 < pagesCount ? activePage + 1 : activePage
+                        )
+                      }
+                    >
+                      <div className={styles.thumbnails}>
+                        {filteredArr.slice(activePage*mode, (activePage + 1) * mode ).map( (product) => (
+                          <img
+                            key={product.id}
+                            src={product.photo}
+                            alt=''
+                            className = {product.photo === currentProduct.photo ? styles.thumbnail + ' ' + styles.active : styles.thumbnail}
+                            onClick={e => {
+                              e.preventDefault();
+                              this.setNewCurrentProduct(product);
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </SwipeComponent>
                     <Button
                       className={styles.next}
                       onClick={e => {
@@ -260,7 +282,6 @@ class Gallery extends React.Component {
     );
   }
 }
-
 Gallery.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
@@ -278,5 +299,4 @@ Gallery.propTypes = {
     })
   ),
 };
-
 export default Gallery;
