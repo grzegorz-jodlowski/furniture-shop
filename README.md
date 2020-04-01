@@ -1,26 +1,24 @@
 <p align="center">
-<a href="https://dazzling-engelbart-461483.netlify.com/"><img src="" title="" alt=""></a>
+<a href="https://dazzling-engelbart-461483.netlify.com/"><img src="public/images/furniture-shop.png" title="furniture shop" alt="screen from main page of furniture shop."></a>
 </p>
 
 
 
-# <p align="center">✅ Furniture shop with React</p>
+# <p align="center">🪑 Furniture shop with React</p>
 <p align="center">Project for learning team cooperation in IT (with React and Redux)</p>
 
 </br>
 
 ## Table of Contents
 
-- [<p align="center">✅ Furniture shop with React</p>](#%e2%9c%85-furniture-shop-with-react)
-  - [Table of Contents](#table-of-contents)
-  - [<a name="about"></a>What's this project about?](#whats-this-project-about)
-  - [<a name="technologies"></a>Technologies used](#technologies-used)
-  - [<a name="what"></a>What I learned?](#what-i-learned)
-  - [<a name="interesting"></a>Interesting code snippet (for me of course 😉)](#interesting-code-snippet-for-me-of-course-%f0%9f%98%89)
-  - [<a name="install"></a>Installation](#installation)
-  - [<a name="npmscripts"></a>NPM scripts](#npm-scripts)
-  - [<a name="githooks"></a>GIT hooks](#git-hooks)
-  - [<a name="netlify"></a>Netlify](#netlify)
+- [What's this project about?](#about)
+- [Technologies used](#technologies)
+- [What I learned?](#what)
+- [Interesting code snippet](#interesting)
+- [Installation](#install)
+- [NPM scripts](#scripts)
+- [GIT hooks](#githooks)
+- [Netlify](#net)
 
 </br>
 
@@ -79,7 +77,7 @@ npm start
 <br/>
 
 
-## <a name="npmscripts"></a>NPM scripts
+## <a name="scripts"></a>NPM scripts
 
 There are 3 main scripts to speed up work:
 
@@ -100,7 +98,7 @@ for files selected with `git add` and to be saved in commit.
 <br/>
 
 
-## <a name="netlify"></a>Netlify
+## <a name="net"></a>Netlify
 [Furniture shop](https://dazzling-engelbart-461483.netlify.com/)
 
 </br>
