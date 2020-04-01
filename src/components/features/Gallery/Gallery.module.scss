@@ -53,6 +53,10 @@
             font-size: 16px;
             display: block;
             cursor: pointer;
+            @media (max-width: 990px ) {
+              padding: 15px 2px;
+              font-size: 15px;
+            }
 
             &.active,
             &:hover {
@@ -253,5 +257,11 @@
         margin-bottom: 20px;
       }
     }
+  }
+}
+
+@media (max-width: $tablet-breakpoint ) {
+  .picture {
+    display: none;
   }
 }
