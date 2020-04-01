@@ -4,13 +4,14 @@ import ReactTooltip from 'react-tooltip';
 import styles from '../../features/Gallery/Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faStar,
   faExchangeAlt,
   faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
+import Rating from '../../common/Rating/RatingContainer';
+
 
 const GalleryBox = ({
   id,
@@ -45,15 +46,7 @@ const GalleryBox = ({
         <div className={styles.triangleTopLeft} />
         <h5>{name}</h5>
         <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
+          <Rating stars={products[0].stars} userRate={products[0].userRate} id={products[0].id} />
         </div>
         <div className={styles.triangleBottomRight} />
         <div className={styles.price}>
@@ -75,6 +68,7 @@ GalleryBox.propTypes = {
   photo: PropTypes.string,
   oldprice: PropTypes.number,
   newFurniture: PropTypes.bool,
+  userRate: PropTypes.number,
 };
 
 export default GalleryBox;
