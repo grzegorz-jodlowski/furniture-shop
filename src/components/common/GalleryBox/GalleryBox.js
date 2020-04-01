@@ -11,7 +11,7 @@ import {
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
 import Rating from '../../common/Rating/RatingContainer';
-
+import { products } from '../../../redux/initialState';
 
 const GalleryBox = ({
   id,
