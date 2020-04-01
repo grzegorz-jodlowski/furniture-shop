@@ -1,10 +1,37 @@
 const initialState = {
+  deviceMode: '',
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },
     { id: 'sofa', name: 'Sofa' },
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
+  ],
+  reviews: [
+    {
+      id: 'first',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultrices lacus eget blandit. Morbi at enim dui. Nulla at dapibus nibh. Nulla imperdiet, lacus quis tincidunt imperdiet, dui libero imperdiet ante, vel maximus ex urna quis quam',
+      name: 'John Smith',
+      description: 'Furniture client',
+      photo: '/images/man.jpg',
+    },
+    {
+      id: 'second',
+      text:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultrices lacus eget blandit. Morbi at enim dui. Nulla at dapibus nibh. Nulla imperdiet, lacus quis tincidunt imperdiet, dui libero imperdiet ante, vel maximus ex urna quis quam Nulla imperdiet, lacus quis tincidunt imperdiet, dui libero imperdiet ante, vel maximus ex urna quis quam',
+
+      name: 'Alan Wake',
+      description: 'Furniture client',
+      photo: '/images/man2.jpg',
+    },
+    {
+      id: 'third',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula ultrices lacus eget blandit. Morbi at enim dui. Nulla at dapibus nibh.',
+      name: 'Caroline Bishop',
+      description: 'Furniture client',
+      photo: '/images/woman.jpg',
+    },
   ],
   products: [
     {
@@ -13,13 +40,13 @@ const initialState = {
       category: 'bed',
       oldPrice: 50,
       price: 30,
-      stars: 2,
-      promo: '',
+      stars: 0,
+      promo: 'sale',
       newFurniture: true,
       photo: '/images/products/beds/bed1.jpeg',
       favorite: true,
       compare: true,
-      userRate: 4,
+      userRate: 2,
       upTo: true,
     },
     {
@@ -1121,6 +1148,38 @@ const initialState = {
   cart: {
     products: [],
   },
+  brands: [
+    {
+      id: 'layer-138',
+      name: 'Layer 138',
+      photo: '/images/brands/layer-138.png',
+    },
+    {
+      id: 'layer-139',
+      name: 'Layer 139',
+      photo: '/images/brands/layer-139.png',
+    },
+    {
+      id: 'layer-140',
+      name: 'Layer 140',
+      photo: '/images/brands/layer-140.png',
+    },
+    {
+      id: 'layer-141',
+      name: 'Layer 141',
+      photo: '/images/brands/layer-141.png',
+    },
+    {
+      id: 'layer-142',
+      name: 'Layer 142',
+      photo: '/images/brands/layer-142.png',
+    },
+    {
+      id: 'layer-143',
+      name: 'Layer 143',
+      photo: '/images/brands/layer-143.png',
+    },
+  ],
 };
 
 export default initialState;

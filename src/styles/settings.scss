@@ -119,7 +119,17 @@ $gallery-price: $lightGray;
 $gallery-picture: $green;
 $gallery-overly: $mediumLightGrayishBlue;
 
+/*BRANDS*/
+
+$brands-border: $lightGray;
+
 /*OTHER*/
+
+$clientFeedback-header-color: $orange;
+$clientFeedback-shortLine-color: $orange;
+$clientFeedback-longLine-color: $mediumLightGray;
+$clientFeedback-dots-bgc: $white;
+$clientFeedback-dots-a: $veryLightGray;
 
 $primary: $orange;
 
@@ -137,7 +147,6 @@ $tablet-breakpoint: 768px;
 $mobile-breakpoint: 425px;
 
 /*hover animations*/
-
 
 /*transition values*/
 $background-color-transition: 250ms;

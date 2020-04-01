@@ -2,21 +2,21 @@ import React from 'react';
 import styles from './Gallery.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+
 import 'rc-tooltip/assets/bootstrap_white.css';
 import Tooltip from 'rc-tooltip';
 import SwipeComponent from '../../common/ SwipeComponent/SwipeComponent';
-
-
 import {
   faStar,
   faExchangeAlt,
   faShoppingBasket,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
-import FadeIn from 'react-fade-in';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../../common/Button/Button';
+import Rating from '../../common/Rating/RatingContainer';
+import FadeIn from 'react-fade-in';
 
 class Gallery extends React.Component {
   state = {
@@ -36,18 +36,13 @@ class Gallery extends React.Component {
       userRate: 4,
     },
   };
-
-
   resize = () => this.forceUpdate()
-
   componentDidMount() {
     window.addEventListener('resize', this.resize);
   }
-
   componentWillUnmount() {
     window.removeEventListener('resize', this.resize);
   }
-
   setNewCurrentProduct(el) {
     this.setState({
       currentProduct: {
@@ -63,7 +58,6 @@ class Gallery extends React.Component {
       },
     });
   }
-
   moveRight() {
     const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
     if (this.state.activePage < pagesCount - 1) {
@@ -72,9 +66,7 @@ class Gallery extends React.Component {
       }));
     }
   }
-
   moveLeft() {
-
     const pagesCount = Math.ceil(this.state.filteredArr.length / 6);
     if (this.state.activePage > 0 && this.state.activePage < pagesCount) {
       this.setState(prevState => ({
@@ -82,7 +74,6 @@ class Gallery extends React.Component {
       }));
     }
   }
-
   filterProducts(arr, activeTab) {
     return new Promise((resolve) => {
       switch (activeTab) {
@@ -115,7 +106,6 @@ class Gallery extends React.Component {
       }
     });
   }
-
   async handleTabChange(arr, newTab) {
     this.setState({ activeTab: newTab });
     await this.filterProducts(arr, newTab);
@@ -149,7 +139,6 @@ class Gallery extends React.Component {
     } else {
       mode = 5;
     }
-
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -220,13 +209,9 @@ class Gallery extends React.Component {
                       <div className={styles.triangleTopLeft} />
                       <h5>{currentProduct.name}</h5>
                       <div className={styles.stars}>
-                        <span>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                          <FontAwesomeIcon icon={faStar}></FontAwesomeIcon>
-                        </span>
+
+                        <Rating stars={products[0].stars} userRate={products[0].userRate} id={products[0].id} />
+
                       </div>
                       <div className={styles.triangleBottomRight} />
                       <div className={styles.price}>
@@ -297,7 +282,6 @@ class Gallery extends React.Component {
     );
   }
 }
-
 Gallery.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
@@ -306,6 +290,7 @@ Gallery.propTypes = {
       category: PropTypes.string,
       price: PropTypes.number,
       stars: PropTypes.number,
+      userRate: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
       favorite: PropTypes.bool,
@@ -314,5 +299,4 @@ Gallery.propTypes = {
     })
   ),
 };
-
 export default Gallery;
