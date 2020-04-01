@@ -10,7 +10,6 @@ import Brands from '../../features/Brands/BrandsContainer';
 import Offer from '../../features/Offer/OfferContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
 
-
 const Homepage = () => (
   <div className={styles.root}>
     <Offer />
