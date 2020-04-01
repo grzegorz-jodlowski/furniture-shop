@@ -7,7 +7,6 @@ import 'rc-tooltip/assets/bootstrap_white.css';
 import Tooltip from 'rc-tooltip';
 import SwipeComponent from '../../common/ SwipeComponent/SwipeComponent';
 import {
-  faStar,
   faExchangeAlt,
   faShoppingBasket,
   faEye,
