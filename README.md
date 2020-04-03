@@ -24,8 +24,7 @@
 
 ## <a name="about"></a>What's this project about?
 
-This is
-
+This is project for furniture store. It consists of many sections regarding: Hot deals, Features, New Furniture, Gallery, Feedback, Brands... RWD has been implemented for most sections and its mode is saved in the Redux application state. It is possible to add furniture product to 'favorites' and this will also be saved in the application state.
 
 </br>
 
@@ -57,7 +56,7 @@ This is
 
 </br>
 
-## <a name="install"></a>Installation
+## <a name="install"></a>Installation and quick start
 
 - use the package manager [npm](https://www.npmjs.com/get-npm) to install dependencies:
 
