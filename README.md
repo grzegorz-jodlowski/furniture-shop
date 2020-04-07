@@ -37,22 +37,81 @@ This is project for furniture store. It consists of many sections regarding: Hot
 - Redux
 - webpack
 - GIT
+- Jira
 
 </br>
 
 ## <a name="what"></a>What I learned?
-- force code validation with ESLint only when committing (using the [husky](https://www.npmjs.com/package/husky) package),
+- what are the main agile methodologies and their advantages over the waterfall method in IT,
+- what roles are in the standard development team,
+- how the scrum sprint is organized and which elements are necessary,
+- use Jira as a tool for organizing team work,
+- how to communicate in a team and what tools are best used during remote communication,
+- work with git in a team in a pull request system,
+- create transparent pull requests,
+- synchronize work with git, GitHub and Jira,
+- solve conflicts in a git in a more advanced way,
+- do code review for other team members,
+- work with GitHub in a more advanced way,
+- create a linear project history by working with git rebase,
+- modify commits history using the interactive git rebase mode,
+- copy commits between branches (cherry-pick command),
+- create project documentation (Readme file, GitHub Wiki),
+- write documentation in Markdown language,
+- use Redux in a more advanced way.
+
 
 
 </br>
 
 ## <a name="interesting"></a>Interesting code snippet (for me of course 😉)
-- A
+- commits join in history using `git rebase -i HEAD ~ 3` (last 3 commits)
+
+```git
+pick f4b0988 Add header and footer
+pick 3f91f8b Add new content
+fixup 6d9c1c8 Fix typo
+
+# Rebase 7c044ca..6d9c1c8 onto 7c044ca (3 commands)
+#
+# Commands:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+# x, exec = run command (the rest of the line) using shell
+# d, drop = remove commit
+```
+-  reducer responsible for the change of state depending on the size of the window
 
 ```js
+// action name creator
+const reducerName = 'deviceMode';
+const createActionName = name => `app/${reducerName}/${name}`;
+
+// action types
+export const UPDATE_DEVICE_MODE = createActionName('UPDATE_DEVICE_MODE');
+
+// action creators
+export const createActionUpdateDeviceMode = payload => ({
+  payload: payload,
+  type: UPDATE_DEVICE_MODE,
+});
+
+/* reducer */
+export default function reducer(statePart = '', action = '') {
+  switch (action.type) {
+    case UPDATE_DEVICE_MODE: {
+      return action.payload;
+    }
+    default:
+      return statePart;
+  }
+}
+
 
 ```
-
 
 </br>
 
