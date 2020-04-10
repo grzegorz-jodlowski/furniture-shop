@@ -18,7 +18,7 @@
 - [Installation](#install)
 - [NPM scripts](#scripts)
 - [GIT hooks](#githooks)
-- [Netlify](#net)
+- [Website (on Netlify)](#site)
 
 </br>
 
@@ -137,7 +137,7 @@ npm start
 
 ## <a name="scripts"></a>NPM scripts
 
-There are 3 main scripts to speed up work:
+There are 4 main scripts to speed up work:
 
 - `build`: builds a project in the` build` folder based on files from the `src` and` public` folders,
 - `start`: observes changes in the` src` folder and starts working preview,
@@ -156,8 +156,10 @@ for files selected with `git add` and to be saved in commit.
 <br/>
 
 
-## <a name="net"></a>Netlify
+## <a name="site"></a>Website (on Netlify)
 [Furniture shop](https://dazzling-engelbart-461483.netlify.com/)
+- if the page loads slowly, wait a moment, the server is waking up because it is hosted on a free platform Netlify.
+
 
 </br>
 </br>
