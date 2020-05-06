@@ -12,6 +12,7 @@
 ## Table of Contents
 
 - [What's this project about?](#about)
+- [Rules and good practices in a team project](#rul)
 - [Technologies used](#technologies)
 - [What I learned?](#what)
 - [Interesting code snippet](#interesting)
@@ -61,8 +62,26 @@ This is project for furniture store. It consists of many sections regarding: Hot
 - use Redux in a more advanced way.
 
 
+</br>
+
+## <a name="rul"></a>Rules and good practices in our team project
+- assign tasks ourselves from the backlog,
+- everyone can have a maximum of two tasks assigned, and there can be only one task in progress,
+- write daily at the end of the day,
+- branch name is the number from Jira,
+- Pull Request (PR) should contain a description of what PR is about and what has been done and a link to the task in Jira, the name of the PR is the task number,
+- always create a new branch from the current master - first update the master and then create a branch,
+- before committing changes, make sure you add only files you worked on as part of the task (`git status` and `git add -p`),
+- use Polish in descriptions on GH and during code review,
+- write commits in English,
+- use ES6 writing JavaScript,
+- the project is team-based, not individual - if we want to make any change in the project, we consult it with the whole team,
+- respect each other,
+- try to help others... and have fun 😎
+
 
 </br>
+
 
 ## <a name="interesting"></a>Interesting code snippet (for me of course 😉)
 - commits join in history using `git rebase -i HEAD ~ 3` (last 3 commits)
